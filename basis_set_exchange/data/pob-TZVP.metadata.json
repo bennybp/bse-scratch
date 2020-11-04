@@ -1,0 +1,14 @@
+{
+  "molssi_bse_schema": {
+    "schema_type": "metadata",
+    "schema_version": "0.1"
+  },
+  "names": [
+    "pob-TZVP"
+  ],
+  "tags": [],
+  "family": "pob",
+  "description": "pob-TZVP",
+  "role": "orbital",
+  "auxiliaries": {}
+}

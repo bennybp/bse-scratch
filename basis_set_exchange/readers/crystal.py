@@ -18,7 +18,7 @@ def _parse_electron_lines(basis_lines, bs_data):
     element_sym = lut.element_name_from_Z(element_Z)
     num_shells = int(basis_lines[0].split()[1])
 
-    element_data = helpers.create_element_data(bs_data, element_Z, 'electron_shells')
+    element_data = helpers.create_element_data(bs_data, str(element_Z), 'electron_shells')
 
     # After that come the shells.
     shell_blocks = helpers.partition_lines(basis_lines[1:], shell_re.match)

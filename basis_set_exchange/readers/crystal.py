@@ -5,7 +5,7 @@ from . import helpers
 # Element entry starts out with two integers
 element_re = re.compile(r'^([\d]{1,3})\s+([\d]+)?$')
 # The shell definition has three integers and two (potentially floating point, maybe integer) numbers
-shell_re = re.compile(r'^([\d]+)\s+([\d]+)\s+([\d]+)\s+({0})\s+({0})$'.format(helpers.floating_re_str))
+shell_re = re.compile(r'^([\d]+)\s+([\d]+)\s+([\d]+)\s+({0}|[\d]+)\s+({0}|[\d]+)$'.format(helpers.floating_re_str))
 # ECP definition: ZNUC and six integers for number of terms
 ecp_re = re.compile(r'^({})\s+([\d]+)\s+([\d]+)\s+([\d]+)\s+([\d]+)\s+([\d]+)\s+([\d]+)$'.format(helpers.floating_re_str))
 # ECP entry: expn coeff rexp
@@ -57,24 +57,8 @@ def _parse_electron_lines(basis_lines, bs_data):
         # CRYSTAL uses a spherical basis
         func_type = helpers.function_type_from_am(shell_am, 'gto', 'spherical')
 
-        # Handle gaussian scaling factors
-        # The square of the scaling factor is applied to exponents.
-        # Typically they are 1.0, but not always
-        scaling_factors = helpers.replace_d(scaling_factors)
-        scaling_factors = [float(x) for x in scaling_factors.split()]
-
-        # Remove any scaling factors that are 0.0
-        scaling_factors = [x for x in scaling_factors if x != 0.0]
-
-        # We should always have at least one scaling factor
-        if len(scaling_factors) == 0:
-            raise RuntimeError("No scaling factors given for element {}: Line: {}".format(element_sym, sh_lines[0]))
-
-        # There can be multiple scaling factors, but we don't handle that. It seems to be very rare
-        if len(scaling_factors) > 1:
-            raise NotImplementedError("Number of scaling factors > 1")
-
-        scaling_factor = float(scaling_factors[0])**2
+        # Handle scaling factor
+        scaling_factor = float(scaling_factors)**2
         has_scaling = scaling_factor != 1.0
 
         # How many columns of coefficients do we have?

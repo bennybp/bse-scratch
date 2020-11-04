@@ -6,6 +6,21 @@ from . import helpers
 element_re = re.compile(r'^([\d]{1,3})\s+([\d]+)?$')
 # The shell definition has three integers and two (potentially floating point, maybe integer) numbers
 shell_re = re.compile(r'^([\d]+)\s+([\d]+)\s+([\d]+)\s+({0})\s+({0})$'.format(helpers.floating_re_str))
+# ECP definition: ZNUC and six integers for number of terms
+ecp_re = re.compile(r'^({})\s+([\d]+)\s+([\d]+)\s+([\d]+)\s+([\d]+)\s+([\d]+)\s+([\d]+)$'.format(helpers.floating_re_str))
+# ECP entry: expn coeff rexp
+ecp_entry_re = re.compile(r'^({0})\s+({0})\s+(\d)$'.format(helpers.floating_re_str))
+
+def _get_element_ecp(basis_lines):
+    '''Determines the element and if an ECP is used'''
+    # See pg 24 in https://www.crystal.unito.it/Manuals/crystal17.pdf
+    # First line is "{element} {number of shells}"
+    NAT = int(basis_lines[0].split()[0])
+    element_Z = NAT % 100
+    # ECPs are used only in this range
+    ecp = (NAT > 200 and NAT <= 1000)
+
+    return element_Z, ecp
 
 def _parse_electron_lines(basis_lines, bs_data):
     '''Parses lines representing all the electron shells for a single element
@@ -13,8 +28,10 @@ def _parse_electron_lines(basis_lines, bs_data):
     Resulting information is stored in bs_data
     '''
 
-    # First line is "{element} {number of shells}"
-    element_Z = int(basis_lines[0].split()[0])
+    # Get element and use of ecp
+    element_Z, ecp = _get_element_ecp(basis_lines)
+
+    # Get symbol
     element_sym = lut.element_name_from_Z(element_Z)
     num_shells = int(basis_lines[0].split()[1])
 
@@ -96,6 +113,65 @@ def _parse_electron_lines(basis_lines, bs_data):
 
         element_data['electron_shells'].append(shell)
 
+def _parse_ecp_block(basis_lines, ecp_lines, bs_data):
+    '''Parses block of ECP data
+
+    Resulting information is stored in bs_data
+    '''
+
+    # Get element and use of ecp
+    element_Z, ecp = _get_element_ecp(basis_lines)
+    element_sym = lut.element_name_from_Z(element_Z)
+    element_data = helpers.create_element_data(bs_data, str(element_Z), 'ecp_potentials')
+
+    # Second line is information about the ECP
+    Znuc, M, M0, M1, M2, M3, M4 = helpers.parse_line_regex(ecp_re, ecp_lines[1], 'Znuc, M, M0, M1, M2, M3, M4')
+
+    # Number of electrons *in* the ECP
+    element_data['ecp_electrons'] = element_Z - int(Znuc)
+
+    # Read in the records
+    ecp_records = [helpers.parse_line_regex(ecp_entry_re, ecp_lines[2+iline], 'ALFKL, CGKL, NKL') for iline in range(M+M0+M1+M2+M3+M4)]
+
+    # Collect the results
+    def get_data(records):
+        '''Extracts the data from the ecp record'''
+        r_exp = [r[2] for r in records]
+        g_exp = [r[0] for r in records]
+        coeff = [r[1] for r in records]
+        return r_exp, g_exp, coeff
+
+    M_arr = [M, M0, M1, M2, M3, M4]
+    ecp_data = []
+    offset = 0
+    for idx, mdata in enumerate(M_arr):
+        if mdata>0:
+            # We have an entry, extract it from the read-in records
+            r_exp, g_exp, coeff = get_data(ecp_records[offset:offset+mdata])
+            # increment offset
+            offset += mdata
+
+            if idx==0:
+                # case of M, don't know what this corresponds to
+                ecp_am = None
+            else:
+                #
+                ecp_am = idx-1
+
+            ecp_pot = {
+                'angular_momentum': ecp_am,
+                'ecp_type': 'scalar_ecp',
+                'r_exponents': r_exp,
+                'gaussian_exponents': g_exp,
+                'coefficients': coeff
+            }
+            element_data['ecp_potentials'].append(ecp_pot)
+
+def _parse_ecp_lines(basis_lines, bs_data):
+    '''Checks if there is an ecp entry for the element and adds it to the basis set'''
+    element_sections = helpers.partition_lines(basis_lines, ecp_re.match)
+    for es in element_sections:
+        _parse_ecp_block(basis_lines, es, bs_data)
 
 def read_crystal(basis_lines):
     '''Reads Crystal-formatted file data and converts it to a dictionary
@@ -118,5 +194,8 @@ def read_crystal(basis_lines):
     element_sections = helpers.partition_lines(basis_lines, element_re.match, min_size=3)
     for es in element_sections:
         _parse_electron_lines(es, bs_data)
+        element_Z, ecp = _get_element_ecp(es)
+        if ecp:
+            _parse_ecp_lines(es, bs_data)
 
     return bs_data

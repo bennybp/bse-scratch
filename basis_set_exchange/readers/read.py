@@ -15,6 +15,7 @@ from .dalton import read_dalton
 from .molcas import read_molcas
 from .genbas import read_genbas
 from .demon2k import read_demon2k
+from .crystal import read_crystal
 
 _reader_map = {
     'turbomole': {
@@ -61,6 +62,11 @@ _reader_map = {
         'display': 'deMon2k',
         'extension': '.d2k',
         'reader': read_demon2k
+    },
+    'crystal': {
+        'display': 'Crystal',
+        'extension': '.crystal',
+        'reader': read_crystal
     }
 }
 

@@ -1,0 +1,170 @@
+{
+  "molssi_bse_schema": {
+    "schema_type": "element",
+    "schema_version": "0.1"
+  },
+  "name": "pob-DZVP-rev2",
+  "description": "pob-DZVP-rev2",
+  "elements": {
+    "1": {
+      "components": [
+        "pob/pob-DZVP-rev2.1.json"
+      ]
+    },
+    "3": {
+      "components": [
+        "pob/pob-DZVP-rev2.1.json"
+      ]
+    },
+    "4": {
+      "components": [
+        "pob/pob-DZVP-rev2.1.json"
+      ]
+    },
+    "5": {
+      "components": [
+        "pob/pob-DZVP-rev2.1.json"
+      ]
+    },
+    "6": {
+      "components": [
+        "pob/pob-DZVP-rev2.1.json"
+      ]
+    },
+    "7": {
+      "components": [
+        "pob/pob-DZVP-rev2.1.json"
+      ]
+    },
+    "8": {
+      "components": [
+        "pob/pob-DZVP-rev2.1.json"
+      ]
+    },
+    "9": {
+      "components": [
+        "pob/pob-DZVP-rev2.1.json"
+      ]
+    },
+    "11": {
+      "components": [
+        "pob/pob-DZVP-rev2.1.json"
+      ]
+    },
+    "12": {
+      "components": [
+        "pob/pob-DZVP-rev2.1.json"
+      ]
+    },
+    "13": {
+      "components": [
+        "pob/pob-DZVP-rev2.1.json"
+      ]
+    },
+    "14": {
+      "components": [
+        "pob/pob-DZVP-rev2.1.json"
+      ]
+    },
+    "15": {
+      "components": [
+        "pob/pob-DZVP-rev2.1.json"
+      ]
+    },
+    "16": {
+      "components": [
+        "pob/pob-DZVP-rev2.1.json"
+      ]
+    },
+    "17": {
+      "components": [
+        "pob/pob-DZVP-rev2.1.json"
+      ]
+    },
+    "19": {
+      "components": [
+        "pob/pob-DZVP-rev2.1.json"
+      ]
+    },
+    "20": {
+      "components": [
+        "pob/pob-DZVP-rev2.1.json"
+      ]
+    },
+    "21": {
+      "components": [
+        "pob/pob-DZVP-rev2.1.json"
+      ]
+    },
+    "22": {
+      "components": [
+        "pob/pob-DZVP-rev2.1.json"
+      ]
+    },
+    "23": {
+      "components": [
+        "pob/pob-DZVP-rev2.1.json"
+      ]
+    },
+    "24": {
+      "components": [
+        "pob/pob-DZVP-rev2.1.json"
+      ]
+    },
+    "25": {
+      "components": [
+        "pob/pob-DZVP-rev2.1.json"
+      ]
+    },
+    "26": {
+      "components": [
+        "pob/pob-DZVP-rev2.1.json"
+      ]
+    },
+    "27": {
+      "components": [
+        "pob/pob-DZVP-rev2.1.json"
+      ]
+    },
+    "28": {
+      "components": [
+        "pob/pob-DZVP-rev2.1.json"
+      ]
+    },
+    "29": {
+      "components": [
+        "pob/pob-DZVP-rev2.1.json"
+      ]
+    },
+    "30": {
+      "components": [
+        "pob/pob-DZVP-rev2.1.json"
+      ]
+    },
+    "31": {
+      "components": [
+        "pob/pob-DZVP-rev2.1.json"
+      ]
+    },
+    "32": {
+      "components": [
+        "pob/pob-DZVP-rev2.1.json"
+      ]
+    },
+    "33": {
+      "components": [
+        "pob/pob-DZVP-rev2.1.json"
+      ]
+    },
+    "34": {
+      "components": [
+        "pob/pob-DZVP-rev2.1.json"
+      ]
+    },
+    "35": {
+      "components": [
+        "pob/pob-DZVP-rev2.1.json"
+      ]
+    }
+  }
+}

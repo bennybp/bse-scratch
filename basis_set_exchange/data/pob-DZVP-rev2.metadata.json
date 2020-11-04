@@ -1,0 +1,14 @@
+{
+  "molssi_bse_schema": {
+    "schema_type": "metadata",
+    "schema_version": "0.1"
+  },
+  "names": [
+    "pob-DZVP-rev2"
+  ],
+  "tags": [],
+  "family": "pob",
+  "description": "pob-DZVP-rev2",
+  "role": "orbital",
+  "auxiliaries": {}
+}

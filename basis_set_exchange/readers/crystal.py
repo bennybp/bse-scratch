@@ -3,9 +3,9 @@ from .. import lut
 from . import helpers
 
 # Element entry starts out with two integers
-element_re = re.compile(r'^([1-9]{1,3})\s+([1-9]+)?$')
+element_re = re.compile(r'^([\d]{1,3})\s+([\d]+)?$')
 # The shell definition has three integers and two (potentially floating point, maybe integer) numbers
-shell_re = re.compile(r'^([1-9]+)\s+([1-9]+)\s+([1-9]+)\s+({0})\s+({0})$'.format(helpers.floating_re_str))
+shell_re = re.compile(r'^([\d]+)\s+([\d]+)\s+([\d]+)\s+({0})\s+({0})$'.format(helpers.floating_re_str))
 
 def _parse_electron_lines(basis_lines, bs_data):
     '''Parses lines representing all the electron shells for a single element
@@ -24,7 +24,7 @@ def _parse_electron_lines(basis_lines, bs_data):
     shell_blocks = helpers.partition_lines(basis_lines[1:], shell_re.match)
     for sh_lines in shell_blocks:
         # Shell starts with five integers
-        ityb, raw_shell_am, ngen, formal_charge, scale = helpers.parse_line_regex(shell_re, sh_lines[0], "ityb, lat, ng, che, scal")
+        ityb, raw_shell_am, nprim, formal_charge, scaling_factors = helpers.parse_line_regex(shell_re, sh_lines[0], "ityb, lat, ng, che, scal")
         assert(ityb == 0) # other choices 1 or 2 are Pople STO-nG and 3(6)-21G
 
         # Parse angular momentum
@@ -66,7 +66,7 @@ def _parse_electron_lines(basis_lines, bs_data):
         ngen = len(shell_am)
 
         # Now read the exponents and coefficients
-        exponents, coefficients = helpers.parse_primitive_matrix(sh_lines[1:], nprim, ngen)
+        exponents, coefficients = helpers.parse_primitive_matrix(sh_lines[1:nprim+1], nprim, ngen)
 
         # If there is a scaling factor, apply it
         # But we keep track of some significant-figure type stuff (as best we can)

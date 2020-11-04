@@ -61,9 +61,9 @@ def _parse_electron_lines(basis_lines, bs_data):
         scaling_factor = float(scaling_factors)**2
         has_scaling = scaling_factor != 1.0
 
-        # How many columns of coefficients do we have?
-        # Gaussian doesn't support general contractions, so only >1 if
-        # you have a fused shell
+        # How many columns of coefficients do we have? Crystal
+        # doesn't support general contractions, so only >1 if you have
+        # a fused shell
         ngen = len(shell_am)
 
         # Now read the exponents and coefficients

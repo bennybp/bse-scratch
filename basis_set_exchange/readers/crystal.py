@@ -40,6 +40,10 @@ def _parse_electron_lines(basis_lines, bs_data):
     # After that come the shells.
     shell_blocks = helpers.partition_lines(basis_lines[1:], shell_re.match)
     for sh_lines in shell_blocks:
+        # Skip any blocks that don't have the correct structure
+        if not shell_re.match(sh_lines[0]):
+            continue
+
         # Shell starts with five integers
         ityb, raw_shell_am, nprim, formal_charge, scaling_factors = helpers.parse_line_regex(shell_re, sh_lines[0], "ityb, lat, ng, che, scal")
         assert(ityb == 0) # other choices 1 or 2 are Pople STO-nG and 3(6)-21G
@@ -97,8 +101,8 @@ def _parse_electron_lines(basis_lines, bs_data):
 
         element_data['electron_shells'].append(shell)
 
-def _parse_ecp_block(basis_lines, ecp_lines, bs_data):
-    '''Parses block of ECP data
+def _parse_ecp_lines(basis_lines, bs_data):
+    '''Parses lines representing the ECP data for an element
 
     Resulting information is stored in bs_data
     '''
@@ -108,54 +112,57 @@ def _parse_ecp_block(basis_lines, ecp_lines, bs_data):
     element_sym = lut.element_name_from_Z(element_Z)
     element_data = helpers.create_element_data(bs_data, str(element_Z), 'ecp_potentials')
 
-    # Second line is information about the ECP
-    Znuc, M, M0, M1, M2, M3, M4 = helpers.parse_line_regex(ecp_re, ecp_lines[1], 'Znuc, M, M0, M1, M2, M3, M4')
+    ecp_sections = helpers.partition_lines(basis_lines, ecp_re.match)
+    for ecp_lines in ecp_sections:
+        # Skip any blocks that don't have the correct structure
+        if not ecp_re.match(ecp_lines[0]):
+            continue
 
-    # Number of electrons *in* the ECP
-    element_data['ecp_electrons'] = element_Z - int(Znuc)
+        # First line is information about the ECP
+        Znuc, M, M0, M1, M2, M3, M4 = helpers.parse_line_regex(ecp_re, ecp_lines[0], 'Znuc, M, M0, M1, M2, M3, M4')
 
-    # Read in the records
-    ecp_records = [helpers.parse_line_regex(ecp_entry_re, ecp_lines[2+iline], 'ALFKL, CGKL, NKL') for iline in range(M+M0+M1+M2+M3+M4)]
+        # Number of electrons *in* the ECP
+        element_data['ecp_electrons'] = element_Z - int(float(Znuc))
 
-    # Collect the results
-    def get_data(records):
-        '''Extracts the data from the ecp record'''
-        r_exp = [r[2] for r in records]
-        g_exp = [r[0] for r in records]
-        coeff = [r[1] for r in records]
-        return r_exp, g_exp, coeff
+        # Read in the records
+        ecp_records = [helpers.parse_line_regex(ecp_entry_re, ecp_lines[1+iline], 'ALFKL, CGKL, NKL') for iline in range(M+M0+M1+M2+M3+M4)]
 
-    M_arr = [M, M0, M1, M2, M3, M4]
-    ecp_data = []
-    offset = 0
-    for idx, mdata in enumerate(M_arr):
-        if mdata>0:
-            # We have an entry, extract it from the read-in records
-            r_exp, g_exp, coeff = get_data(ecp_records[offset:offset+mdata])
-            # increment offset
-            offset += mdata
+        # Collect the results
+        def get_data(records):
+            '''Extracts the data from the ecp record'''
+            r_exp = [r[2] for r in records]
+            g_exp = [r[0] for r in records]
+            coeff = [r[1] for r in records]
 
-            if idx==0:
-                # case of M, don't know what this corresponds to
-                ecp_am = None
-            else:
-                #
-                ecp_am = idx-1
+            return r_exp, g_exp, coeff
 
-            ecp_pot = {
-                'angular_momentum': ecp_am,
-                'ecp_type': 'scalar_ecp',
-                'r_exponents': r_exp,
-                'gaussian_exponents': g_exp,
-                'coefficients': coeff
-            }
-            element_data['ecp_potentials'].append(ecp_pot)
+        M_arr = [M, M0, M1, M2, M3, M4]
+        ecp_data = []
+        offset = 0
+        for idx, mdata in enumerate(M_arr):
+            if mdata>0:
+                # We have an entry, extract it from the read-in records
+                r_exp, g_exp, coeff = get_data(ecp_records[offset:offset+mdata])
+                # increment offset
+                offset += mdata
 
-def _parse_ecp_lines(basis_lines, bs_data):
-    '''Checks if there is an ecp entry for the element and adds it to the basis set'''
-    element_sections = helpers.partition_lines(basis_lines, ecp_re.match)
-    for es in element_sections:
-        _parse_ecp_block(basis_lines, es, bs_data)
+                if idx==0:
+                    # We have an entry with M, i.e. a scalar potential as
+                    # in a Hay-Wadt ECP; this does not appear to be
+                    # supported by the BSE at the moment
+                    raise RuntimeError('Hay-Wadt ECPs are not supported at the moment')
+                else:
+                    # These terms come with a projection operator with am
+                    ecp_am = [idx-1]
+
+                ecp_pot = {
+                    'angular_momentum': ecp_am,
+                    'ecp_type': 'scalar_ecp',
+                    'r_exponents': r_exp,
+                    'gaussian_exponents': g_exp,
+                    'coefficients': [coeff] # BSE expects coefficients in a double array
+                }
+                element_data['ecp_potentials'].append(ecp_pot)
 
 def read_crystal(basis_lines):
     '''Reads Crystal-formatted file data and converts it to a dictionary
@@ -177,8 +184,8 @@ def read_crystal(basis_lines):
     # split into element sections (may be electronic or ecp)
     element_sections = helpers.partition_lines(basis_lines, element_re.match, min_size=3)
     for es in element_sections:
-        _parse_electron_lines(es, bs_data)
         element_Z, ecp = _get_element_ecp(es)
+        _parse_electron_lines(es, bs_data)
         if ecp:
             _parse_ecp_lines(es, bs_data)
 

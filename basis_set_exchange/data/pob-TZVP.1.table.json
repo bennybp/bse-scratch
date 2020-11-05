@@ -4,7 +4,7 @@
     "schema_version": "0.1"
   },
   "revision_description": "Data from Bredow's web site",
-  "revision_date": "2020-11-04",
+  "revision_date": "2020-11-05",
   "elements": {
     "1": "pob/pob-TZVP.1.element.json",
     "3": "pob/pob-TZVP.1.element.json",
@@ -37,6 +37,22 @@
     "32": "pob/pob-TZVP.1.element.json",
     "33": "pob/pob-TZVP.1.element.json",
     "34": "pob/pob-TZVP.1.element.json",
-    "35": "pob/pob-TZVP.1.element.json"
+    "35": "pob/pob-TZVP.1.element.json",
+    "37": "pob/pob-TZVP.1.element.json",
+    "38": "pob/pob-TZVP.1.element.json",
+    "39": "pob/pob-TZVP.1.element.json",
+    "40": "pob/pob-TZVP.1.element.json",
+    "41": "pob/pob-TZVP.1.element.json",
+    "42": "pob/pob-TZVP.1.element.json",
+    "44": "pob/pob-TZVP.1.element.json",
+    "45": "pob/pob-TZVP.1.element.json",
+    "46": "pob/pob-TZVP.1.element.json",
+    "47": "pob/pob-TZVP.1.element.json",
+    "48": "pob/pob-TZVP.1.element.json",
+    "49": "pob/pob-TZVP.1.element.json",
+    "50": "pob/pob-TZVP.1.element.json",
+    "51": "pob/pob-TZVP.1.element.json",
+    "52": "pob/pob-TZVP.1.element.json",
+    "53": "pob/pob-TZVP.1.element.json"
   }
 }

@@ -21,6 +21,7 @@ from .pqs import write_pqs
 from .cp2k import write_cp2k
 from .bsedebug import write_bsedebug
 from .bdf import write_bdf
+from .crystal import write_crystal
 
 _writer_map = {
     'nwchem': {
@@ -169,7 +170,14 @@ _writer_map = {
         'comment': '*',
         'valid': set(['gto', 'gto_cartesian', 'gto_spherical', 'scalar_ecp']),
         'function': write_bdf
-    }
+    },
+    'crystal': {
+        'display': 'Crystal',
+        'extension': '.crystal',
+        'comment': '*',
+        'valid': set(['gto', 'gto_cartesian', 'gto_spherical', 'scalar_ecp']),
+        'function': write_crystal
+    },
 }
 
 

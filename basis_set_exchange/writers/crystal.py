@@ -24,8 +24,6 @@ def write_crystal(basis):
     
     # Basis sets written together
     for z, data in basis['elements'].items():
-        print('z \"{}\", data \"{}\"'.format(z,data), flush=True)
-
         # Atomic number marking
         nat = int(z)
         if nat >= 99:
@@ -80,10 +78,6 @@ def write_crystal(basis):
                 exponents = shell['exponents']
                 coefficients = shell['coefficients']
 
-                print('am\n{}'.format(am))
-                print('exponents\n{}'.format(exponents))
-                print('coefficients\n{}'.format(coefficients))
-                                                
                 # type of basis: general basis
                 ityb = 0
                 # shell type, SP contractions not considered yet

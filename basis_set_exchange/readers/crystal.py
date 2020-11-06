@@ -3,7 +3,7 @@ from .. import lut
 from . import helpers
 
 # Element entry starts out with two integers
-element_re = re.compile(r'^([\d]{1,3})\s+([\d]+)?$')
+element_re = re.compile(r'^([\d]{1,3})\s+([\d]+)$')
 # The shell definition has three integers and two (potentially floating point, maybe integer) numbers
 shell_re = re.compile(r'^([\d]+)\s+([\d]+)\s+([\d]+)\s+({0}|[\d]+)\s+({0}|[\d]+)$'.format(helpers.floating_re_str))
 # ECP definition: ZNUC and six integers for number of terms

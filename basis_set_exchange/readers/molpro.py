@@ -80,9 +80,6 @@ def _parse_electron_lines(basis_lines, bs_data):
                     cc = ['0.0' for _ in range(1,start)] + cc
                 if end < nprim:
                     cc = cc + ['0.0' for _ in range(end,nprim)]
-
-                if len(cc) != nprim:
-                    print(f'Error on {basis_lines[iline]=}: {cc=}')
                     
                 assert(len(cc) == nprim)
                 # Add to contraction

@@ -132,7 +132,7 @@ def read_molpro(basis_lines):
     for line in basis_lines:
         if line.strip().lower() == 'spherical':
             _func_type = 'gto_spherical'
-        if line.strip().lower() == 'cartesian':
+        elif line.strip().lower() == 'cartesian':
             _func_type = 'gto_cartesian'
 
     bs_data = {}

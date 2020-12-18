@@ -14,6 +14,7 @@ from .gbasis import read_gbasis
 from .dalton import read_dalton
 from .molcas import read_molcas
 from .molpro import read_molpro
+from .libmol import read_libmol
 from .genbas import read_genbas
 
 _reader_map = {
@@ -46,6 +47,11 @@ _reader_map = {
         'display': 'Molpro',
         'extension': '.molpro',
         'reader': read_molpro
+    },
+    'libmol': {
+        'display': 'Molpro system library',
+        'extension': '.libmol',
+        'reader': read_libmol
     },
     'cfour': {
         'display': 'CFOUR',

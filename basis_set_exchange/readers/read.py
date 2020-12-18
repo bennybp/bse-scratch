@@ -13,6 +13,7 @@ from .nwchem import read_nwchem
 from .gbasis import read_gbasis
 from .dalton import read_dalton
 from .molcas import read_molcas
+from .molpro import read_molpro
 from .genbas import read_genbas
 
 _reader_map = {
@@ -40,6 +41,11 @@ _reader_map = {
         'display': 'MolCAS',
         'extension': '.molcas',
         'reader': read_molcas
+    },
+    'molpro': {
+        'display': 'Molpro',
+        'extension': '.molpro',
+        'reader': read_molpro
     },
     'cfour': {
         'display': 'CFOUR',

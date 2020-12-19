@@ -45,7 +45,7 @@ _reader_map = {
     },
     'molpro': {
         'display': 'Molpro',
-        'extension': '.molpro',
+        'extension': '.mpro',
         'reader': read_molpro
     },
     'libmol': {

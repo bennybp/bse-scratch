@@ -64,9 +64,6 @@ def write_libmol(basis):
 
     # Write out ECP
     if ecp_elements:
-        # No idea what the format is
-        return s
-
         s += '\n\n! Effective core Potentials\n'
 
         for z in ecp_elements:
@@ -78,22 +75,36 @@ def write_libmol(basis):
             ecp_list = sorted(data['ecp_potentials'], key=lambda x: x['angular_momentum'])
             ecp_list.insert(0, ecp_list.pop())
 
-            s += 'ECP, {}, {}, {} ;\n'.format(sym, data['ecp_electrons'], max_ecp_am)
-
+            # Collect data for the printout
+            numdata = 0
+            print_blocks = []
             for pot in ecp_list:
-                rexponents = pot['r_exponents']
-                gexponents = pot['gaussian_exponents']
-                coefficients = pot['coefficients']
+                rexp = pot['r_exponents']
+                gexp = pot['gaussian_exponents']
+                coef = pot['coefficients']
 
-                am = pot['angular_momentum']
-                amchar = lut.amint_to_char(am).lower()
-                s += '{};'.format(len(rexponents))
+                block = []
+                for i in range(len(rexp)):
+                    block += [str(rexp[i]), gexp[i], coef[0][i]]
+                print_blocks.append(block)
+                # Data block printout will have this many entries
+                numdata += 3*len(rexp)+1
 
-                if am[0] == max_ecp_am:
-                    s += ' !  ul potential\n'
-                else:
-                    s += ' !  {}-ul potential\n'.format(amchar)
-
-                for p in range(len(rexponents)):
-                    s += '{},{},{};\n'.format(rexponents[p], gexponents[p], coefficients[0][p])
+            # Spin-orbit ECPs are not supported by the BSE schema(?)
+            nspinorbit = 0
+            # Print out header
+            s += '{} ECP : {} {} {} {}\n'.format(sym, data['ecp_electrons'], max_ecp_am, nspinorbit, numdata)
+            s += 'ECP for {} converted by Basis Set Exchange\n'.format(basis['name'])
+            for b in print_blocks:
+                # Print number of terms
+                s += '{} '.format(len(b)//3)
+                # Each line has 6 ECP data
+                pb = reshape(b, 6)
+                for d in range(len(pb)):
+                    print(f'{b=} {pb=} {pb[d]=}')
+                    if d > 0:
+                        # Pad with two spaces to get the entry to align
+                        s += '  '
+                    # Add the data
+                    s += ' '.join(pb[d]) + '\n'
     return s

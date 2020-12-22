@@ -154,11 +154,11 @@ def _parse_lines(basis_lines, bs_data):
     # Read the data one line at a time
     iline=0
     while iline < len(basis_lines):
-        while element_shell_re.match(basis_lines[iline]):
+        if element_shell_re.match(basis_lines[iline]):
             iline = _read_shell(basis_lines, bs_data, iline)
-        while ecp_re.match(basis_lines[iline]):
+        elif ecp_re.match(basis_lines[iline]):
             iline = _read_ecp(basis_lines, bs_data, iline)
-        if not element_shell_re.match(basis_lines[iline]) and not ecp_re.match(basis_lines[iline]):
+        else:
             iline += 1
 
 def read_molpro(basis_lines):

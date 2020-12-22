@@ -1,5 +1,5 @@
 '''
-Write basis set in Molpro system library format
+Writes basis set in Molpro system library format
 
 Written by Susi Lehtola, 2020
 (based on Ben Pritchard's Molpro input code)

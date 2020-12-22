@@ -4,7 +4,6 @@ Reader for Molpro system library basis sets
 Written by Susi Lehtola, 2020
 '''
 
-import re
 import regex
 from .. import lut
 from . import helpers
@@ -37,9 +36,8 @@ def _read_shell(basis_lines, bs_data, iline):
     # Read the shell entry
     shell = helpers.parse_line_regex_dict(element_shell_re, basis_lines[iline],
                                           'element am (aliases) : nprim ncontr start.end')
-    # Read the comment
+    # Skip the comment line
     iline += 1
-    comment = basis_lines[iline]
 
     # Angular momentum
     assert (len(shell['am']) == 1)
@@ -138,9 +136,8 @@ def _read_ecp(basis_lines, bs_data, iline):
     lmaxso = shell['lmaxso'][0]
     ndata = shell['ndata'][0]
 
-    # Read the comment line
+    # Skip the comment line
     iline += 1
-    comment = basis_lines[iline]
 
     # Data entries read in
     nread = 0
@@ -264,13 +261,6 @@ def read_libmol(basis_lines):
 
     # Removes comments
     basis_lines = helpers.prune_lines(basis_lines, '!')
-
-    # Go through input and check basis type
-    for line in basis_lines:
-        if line.strip().lower() == 'spherical':
-            _func_type = 'gto_spherical'
-        if line.strip().lower() == 'cartesian':
-            _func_type = 'gto_cartesian'
 
     bs_data = {}
 

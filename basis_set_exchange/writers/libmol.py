@@ -8,6 +8,7 @@ Written by Susi Lehtola, 2020
 from .. import lut, manip, misc, sort
 from .common import find_range, reshape
 
+
 def write_libmol(basis):
     '''Converts a basis set to Molpro system library format
     '''
@@ -45,17 +46,18 @@ def write_libmol(basis):
                 ncontr = len(coefficients)
 
                 # Collect ranges and coefficients
-                ranges=''
-                print_data=exponents.copy()
+                ranges = ''
+                print_data = exponents.copy()
                 for c in coefficients:
                     first, last = find_range(c)
-                    ranges += ' {}.{}'.format(first+1,last+1)
-                    print_data += c[first:last+1]
+                    ranges += ' {}.{}'.format(first + 1, last + 1)
+                    print_data += c[first:last + 1]
 
                 # Print block entry
                 s += '{} {} {} : {} {}{}\n'.format(sym, amchar, basis['name'], nprim, ncontr, ranges)
                 # Comment
-                s += '{} {} converted by Basis Set Exchange\n'.format(lut.element_name_from_Z(z), misc.contraction_string(data))
+                s += '{} {} converted by Basis Set Exchange\n'.format(lut.element_name_from_Z(z),
+                                                                      misc.contraction_string(data))
 
                 # Output data has 5 entries per row
                 print_data = reshape(print_data, 5)
@@ -88,7 +90,7 @@ def write_libmol(basis):
                     block += [str(rexp[i]), gexp[i], coef[0][i]]
                 print_blocks.append(block)
                 # Data block printout will have this many entries
-                numdata += 3*len(rexp)+1
+                numdata += 3 * len(rexp) + 1
 
             # Spin-orbit ECPs are not supported by the BSE schema(?)
             nspinorbit = 0
@@ -97,7 +99,7 @@ def write_libmol(basis):
             s += 'ECP for {} converted by Basis Set Exchange\n'.format(basis['name'])
             for b in print_blocks:
                 # Print number of terms
-                s += '{} '.format(len(b)//3)
+                s += '{} '.format(len(b) // 3)
                 # Each line has 6 ECP data
                 pb = reshape(b, 6)
                 for d in range(len(pb)):

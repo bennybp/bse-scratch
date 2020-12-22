@@ -136,6 +136,7 @@ def parse_line_regex(rex, line, description=None, convert_int=True):
     else:
         return g
 
+
 def parse_line_regex_dict(rex, line, description=None, convert_int=True):
     if isinstance(rex, str):
         rex = regex.compile(rex)
@@ -150,7 +151,7 @@ def parse_line_regex_dict(rex, line, description=None, convert_int=True):
 
     g = r.capturesdict()
     if convert_int:
-        g = {k : [_convert_str_int(x) for x in g[k]] for k in g}
+        g = {k: [_convert_str_int(x) for x in g[k]] for k in g}
 
     return g
 

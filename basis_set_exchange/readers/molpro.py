@@ -14,9 +14,12 @@ basis_start_re = re.compile(r'^\s*?basis\s*?=\s*?{\s*?$')
 # Basis ends with '}' allowing whitespace
 basis_end_re = re.compile(r'^\s*?}\s*?$')
 # Shell entry: 'am,element,expn1,expn2,...' allowing whitespace
-element_shell_re = regex.compile(r'^\s*?(?P<am>[spdfghikSPDFGHIK])\s*?,\s*?(?P<sym>\w+)\s*?(?:,\s*(?P<exp>{})\s*)+\s*?$'.format(helpers.floating_re_str))
+element_shell_re = regex.compile(
+    r'^\s*?(?P<am>[spdfghikSPDFGHIK])\s*?,\s*?(?P<sym>\w+)\s*?(?:,\s*(?P<exp>{})\s*)+\s*?$'.format(
+        helpers.floating_re_str))
 # Contraction entry: 'am,element,expn1,expn2,...' allowing whitespace
-contraction_re = regex.compile(r'^\s*?c\s*?,\s*?(?P<start>\d+).(?P<end>\d+)\s*?(?:,\s*(?P<coeff>{})\s*)+\s*?$'.format(helpers.floating_re_str))
+contraction_re = regex.compile(r'^\s*?c\s*?,\s*?(?P<start>\d+).(?P<end>\d+)\s*?(?:,\s*(?P<coeff>{})\s*)+\s*?$'.format(
+    helpers.floating_re_str))
 
 # ECP entry: ECP, symbol, number of electrons in ECP, lmax
 ecp_re = regex.compile(r'^\s*ECP\s*,\s*(?P<sym>\w+)\s*,\s*(?P<ncore>\d+)\s*,\s*(?P<lmax>\d+)\s*;\s*$')
@@ -28,6 +31,7 @@ ecp_data_re = re.compile(r'^\s*(\d+)\s*,\s*({0})\s*,\s*({0})\s*;\s*'.format(help
 # Function type: spherical by default
 _func_type = 'gto_spherical'
 
+
 def _read_shell(basis_lines, bs_data, iline):
     '''Reads a shell from the input'''
 
@@ -35,17 +39,17 @@ def _read_shell(basis_lines, bs_data, iline):
     shell = helpers.parse_line_regex_dict(element_shell_re, basis_lines[iline], 'am, element, exps')
 
     # Angular momentum
-    assert(len(shell['am']) == 1)
+    assert (len(shell['am']) == 1)
     shell_am = lut.amchar_to_int(shell['am'][0])
     # Element
-    assert(len(shell['sym']) == 1)
+    assert (len(shell['sym']) == 1)
     element_sym = shell['sym'][0]
     # Exponents
     exponents = shell['exp']
 
     # Number of primitives
     nprim = len(exponents)
-    assert(nprim>0)
+    assert (nprim > 0)
 
     # Create entry
     element_Z = lut.element_Z_from_sym(element_sym, as_str=True)
@@ -62,24 +66,24 @@ def _read_shell(basis_lines, bs_data, iline):
             # We have another contraction
             contr = helpers.parse_line_regex_dict(contraction_re, basis_lines[iline], 'contraction')
             # Start and end exponent
-            assert(len(contr['start']) == 1)
-            assert(len(contr['end']) == 1)
+            assert (len(contr['start']) == 1)
+            assert (len(contr['end']) == 1)
             start = contr['start'][0]
             end = contr['end'][0]
             # Contraction coefficients
             cc = contr['coeff']
 
             # Check number of primitives in contraction
-            ncontr = end-start+1
-            assert(len(cc) == ncontr)
+            ncontr = end - start + 1
+            assert (len(cc) == ncontr)
 
             # Pad coefficients with zeros
             if start > 1:
-                cc = ['0.0' for _ in range(1,start)] + cc
+                cc = ['0.0' for _ in range(1, start)] + cc
             if end < nprim:
-                cc = cc + ['0.0' for _ in range(end,nprim)]
+                cc = cc + ['0.0' for _ in range(end, nprim)]
 
-            assert(len(cc) == nprim)
+            assert (len(cc) == nprim)
             # Add to contraction
             coefficients.append(cc)
         else:
@@ -100,6 +104,7 @@ def _read_shell(basis_lines, bs_data, iline):
 
     return iline
 
+
 def _read_ecp(basis_lines, bs_data, iline):
     '''Reads an ECP from the input'''
     # Read the ECP entry
@@ -110,7 +115,7 @@ def _read_ecp(basis_lines, bs_data, iline):
 
     # ECP blocks
     ecp_blocks = []
-    for l in range(-1,lmax):
+    for l in range(-1, lmax):
         # Read the number of terms in the block
         iline += 1
         nterms = helpers.parse_line_regex(ecp_block_re, basis_lines[iline], 'nterms')
@@ -130,10 +135,10 @@ def _read_ecp(basis_lines, bs_data, iline):
     # Store data
     element_data['ecp_electrons'] = ncore
     for il in range(len(ecp_blocks)):
-        ecp_l = lmax if il==0 else il-1
-        r_exp = [ entry[0] for entry in ecp_blocks[il] ]
-        g_exp = [ entry[1] for entry in ecp_blocks[il] ]
-        coeff = [ entry[2] for entry in ecp_blocks[il] ]
+        ecp_l = lmax if il == 0 else il - 1
+        r_exp = [entry[0] for entry in ecp_blocks[il]]
+        g_exp = [entry[1] for entry in ecp_blocks[il]]
+        coeff = [entry[2] for entry in ecp_blocks[il]]
         ecp_pot = {
             'angular_momentum': [ecp_l],
             'ecp_type': 'scalar_ecp',
@@ -152,7 +157,7 @@ def _parse_lines(basis_lines, bs_data):
     '''
 
     # Read the data one line at a time
-    iline=0
+    iline = 0
     while iline < len(basis_lines):
         if element_shell_re.match(basis_lines[iline]):
             iline = _read_shell(basis_lines, bs_data, iline)
@@ -160,6 +165,7 @@ def _parse_lines(basis_lines, bs_data):
             iline = _read_ecp(basis_lines, bs_data, iline)
         else:
             iline += 1
+
 
 def read_molpro(basis_lines):
     '''Reads basis set from Molpro user input data and converts it to a

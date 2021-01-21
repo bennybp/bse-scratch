@@ -3,6 +3,7 @@ Some helper functions for parsing basis set files
 '''
 
 import re
+import regex
 from ..misc import transpose_matrix
 
 floating_re_str = r'[-+]?\d*\.\d*(?:[dDeE][-+]?\d+)?'
@@ -134,6 +135,25 @@ def parse_line_regex(rex, line, description=None, convert_int=True):
         return g[0]
     else:
         return g
+
+
+def parse_line_regex_dict(rex, line, description=None, convert_int=True):
+    if isinstance(rex, str):
+        rex = regex.compile(rex)
+
+    r = rex.match(line)
+    if not r:
+        if description:
+            raise RuntimeError("Regex '{}' does not match line: '{}'. Regex is '{}'".format(
+                description, line, rex.pattern))
+        else:
+            raise RuntimeError("Regex '{}' does not match line: '{}'".format(rex.pattern, line))
+
+    g = r.capturesdict()
+    if convert_int:
+        g = {k: [_convert_str_int(x) for x in g[k]] for k in g}
+
+    return g
 
 
 def partition_lines(lines,

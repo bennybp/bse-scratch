@@ -12,7 +12,9 @@ floating_only_re = re.compile('^' + floating_re_str + '$')
 integer_re_str = r'[-+]?\d+'
 integer_re = re.compile(integer_re_str)
 integer_only_re = re.compile('^' + integer_re_str + '$')
-
+# Basis set name: require at least one alphabetic ASCII character; allow alphabetic characters, digits and + and -
+basis_name_re_str = r'\d*[a-zA-Z][a-zA-Z0-9\-\+]*'
+basis_name_re = re.compile(basis_name_re_str)
 
 def _convert_str_int(s):
     '''Optionally convert a string to an integer

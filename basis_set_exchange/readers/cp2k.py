@@ -9,11 +9,11 @@ from .. import lut
 from . import helpers
 
 # Shell entry: 'element names'
-element_shell_re = regex.compile(r'^\s*(?P<sym>\w+)(?:\s+(?P<name>\w+))+\s*$')
+element_shell_re = regex.compile(r'^\s*(?P<sym>\w+)(?:\s+(?P<name>{}))+\s*$'.format(helpers.basis_name_re_str))
 # Number of blocks
 nblocks_re = regex.compile(r'^\s*(?P<nblocks>\d+)\s*$')
 # Block entry: n lmin lmax nexp nshell(lmin) nshell(lmin+1) ... nshell(lmax-1) nshell(lmax)
-block_re = regex.compile(r'^\s*(?P<n>\d+)\s+(?P<lmin>\d+)\s+(?P<lmax>\d+)\s+(?P<nexp>\d+)\s+(?P<nshell>\d+)+\s*$')
+block_re = regex.compile(r'^\s*(?P<n>\d+)\s+(?P<lmin>\d+)\s+(?P<lmax>\d+)\s+(?P<nprim>\d+)(?:\s+(?P<nshell>\d+))+\s*$')
 
 # Function type: spherical by default
 _func_type = 'gto_spherical'
@@ -23,7 +23,6 @@ def _read_shell(basis_lines, bs_data):
     '''Read in a shell from the input'''
     # Read the shell entry
     iline = 0
-    print('Block:\n{}'.format(basis_lines))
     element_shell = helpers.parse_line_regex_dict(element_shell_re, basis_lines[iline], 'element (aliases)')
     iline += 1
 
@@ -63,11 +62,12 @@ def _read_shell(basis_lines, bs_data):
         for l in range(lmin, lmax + 1):
             col_offset = sum(nshell[:l - lmin])
             ncontr_l = nshell[l - lmin]
-            l_coeff = coeffs[:, col_offset:col_offset + ncontr_l]
+            l_coeff = coeffs[:][col_offset:col_offset + ncontr_l]
+            func_type = helpers.function_type_from_am([l], 'gto', 'spherical')
             shell = {
                 'function_type': func_type,
                 'region': '',
-                'angular_momentum': shell_am,
+                'angular_momentum': [l],
                 'exponents': exps,
                 'coefficients': l_coeff
             }
@@ -94,8 +94,6 @@ def read_cp2k(basis_lines):
 
     # split into element sections
     element_sections = helpers.partition_lines(basis_lines, element_shell_re.match)
-    for es in element_sections:
-        print('section\n{}'.format(es))
     for es in element_sections:
         _read_shell(es, bs_data)
 

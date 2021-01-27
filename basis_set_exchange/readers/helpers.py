@@ -16,6 +16,7 @@ integer_only_re = re.compile('^' + integer_re_str + '$')
 basis_name_re_str = r'\d*[a-zA-Z][a-zA-Z0-9\-\+\*\(\)\[\]]*'
 basis_name_re = re.compile(basis_name_re_str)
 
+
 def _convert_str_int(s):
     '''Optionally convert a string to an integer
 

@@ -10,16 +10,16 @@ from . import helpers
 
 # Shell entry: 'element am (aliases) : nprim ncontr start1.end1 start2.end2 ... startn.endn' allowing whitespace
 element_shell_re = regex.compile(
-    r'^\s*(?P<sym>\w+)\s+(?P<am>[spdfghikSPDFGHIK])\s*(?:\s*(?P<alias>{})\s*)+\s*:\s*(?P<nprim>\d+)\s*(?P<ncontr>\d+)\s*(?:\s*(?P<range>\d+.\d+)\s*)+\s*$'.format(helpers.basis_name_re_str)
-)
+    r'^\s*(?P<sym>\w+)\s+(?P<am>[spdfghikSPDFGHIK])\s*(?:\s*(?P<alias>{})\s*)+\s*:\s*(?P<nprim>\d+)\s*(?P<ncontr>\d+)\s*(?:\s*(?P<range>\d+.\d+)\s*)+\s*$'
+    .format(helpers.basis_name_re_str))
 # Exponent / coefficient entry: val1 val2 ... valn, allowing whitespace
 entry_re = regex.compile(r'^\s*(?:\s*(?P<val>({}|{}))\s*)+\s*$'.format(helpers.floating_re_str,
                                                                        helpers.integer_re_str))
 
 # ECP entry: symbol ECP names : ncore lmax lmaxso ndata
 ecp_re = regex.compile(
-    r'\s*(?P<sym>\w+)\s+ECP\s+(?:\s*(?P<alias>{})\s*)\s*:\s*(?P<ncore>\d+)\s+(?P<lmax>\d+)\s+(?P<lmaxso>\d+)\s+(?P<ndata>\d+)\s*$'.format(helpers.basis_name_re_str)
-)
+    r'\s*(?P<sym>\w+)\s+ECP\s+(?:\s*(?P<alias>{})\s*)\s*:\s*(?P<ncore>\d+)\s+(?P<lmax>\d+)\s+(?P<lmaxso>\d+)\s+(?P<ndata>\d+)\s*$'
+    .format(helpers.basis_name_re_str))
 # ECP data block beginning: nterms (rexp1 expn1 coeff1) (rexp2 expn2 coeff2) ...
 ecp_block_start_re = regex.compile(
     r'\s*(?P<nterms>\d+)(?:\s+(?P<rexp>\d+)\s+(?P<expn>{0})\s+(?P<coeff>{0}))+\s*$'.format(helpers.floating_re_str))

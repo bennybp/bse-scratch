@@ -13,7 +13,10 @@ from .nwchem import read_nwchem
 from .gbasis import read_gbasis
 from .dalton import read_dalton
 from .molcas import read_molcas
+from .molpro import read_molpro
+from .libmol import read_libmol
 from .genbas import read_genbas
+from .cp2k import read_cp2k
 
 _reader_map = {
     'turbomole': {
@@ -41,6 +44,16 @@ _reader_map = {
         'extension': '.molcas',
         'reader': read_molcas
     },
+    'molpro': {
+        'display': 'Molpro',
+        'extension': '.mpro',
+        'reader': read_molpro
+    },
+    'libmol': {
+        'display': 'Molpro system library',
+        'extension': '.libmol',
+        'reader': read_libmol
+    },
     'cfour': {
         'display': 'CFOUR',
         'extension': '.c4bas',
@@ -55,6 +68,11 @@ _reader_map = {
         'display': 'GBasis',
         'extension': '.gbasis',
         'reader': read_gbasis
+    },
+    'cp2k': {
+        'display': 'CP2K',
+        'extension': '.cp2k',
+        'reader': read_cp2k
     }
 }
 

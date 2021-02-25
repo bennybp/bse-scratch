@@ -52,7 +52,17 @@ def _parse_electron_lines(basis_lines, bs_data):
 
             func_type = helpers.function_type_from_am(shell_am, 'gto', 'spherical')
 
-            exponents, coefficients = helpers.parse_primitive_matrix(sh_lines[1:], nprim=nprim, ngen=1)
+            # Primitive matrix
+            prim_mat = sh_lines[1:1+nprim]
+            # The turbomole format appears to allow an enumeration of the exponents; if there are three fields, we drop the first one
+            for iline in range(len(prim_mat)):
+                entries = prim_mat[iline].split()
+                if len(entries) == 3:
+                    if int(entries[0]) != 1+iline:
+                        raise RuntimeError('Enumerated format detected, but numbering is off on line: ', prim_mat[iline])
+                    prim_mat[iline] = ' '.join(entries[1:])
+
+            exponents, coefficients = helpers.parse_primitive_matrix(prim_mat, nprim=nprim, ngen=1)
 
             shell = {
                 'function_type': func_type,

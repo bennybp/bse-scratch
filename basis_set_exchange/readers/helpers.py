@@ -412,6 +412,7 @@ def parse_primitive_matrix(lines, nprim=None, ngen=None, split=r'\s+'):
     coefficients = []
 
     for l in lines:
+        l0 = l
         l = replace_d(l)
         s = re.split(split, l.strip())
 
@@ -420,10 +421,10 @@ def parse_primitive_matrix(lines, nprim=None, ngen=None, split=r'\s+'):
 
         # Make sure all exponents and coefficients are floating point
         if not is_floating(e):
-            raise RuntimeError("Non-floating-point value found in exponents: " + e)
+            raise RuntimeError("Non-floating-point value found in exponents: " + e + " on line " + l0)
 
         if not all(is_floating(x) for x in c):
-            raise RuntimeError("Non-floating-point value found in coefficients: " + ' '.join(c))
+            raise RuntimeError("Non-floating-point value found in coefficients: " + ' '.join(c) + " on line " + l0)
 
         exponents.append(e)
         coefficients.append(c)

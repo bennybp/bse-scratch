@@ -1,0 +1,14 @@
+{
+  "molssi_bse_schema": {
+    "schema_type": "metadata",
+    "schema_version": "0.1"
+  },
+  "names": [
+    "def2-mTZVPP-JFIT"
+  ],
+  "tags": [],
+  "family": "grimme",
+  "description": "Coulomb fitting set for r2SCAN-3c method",
+  "role": "jfit",
+  "auxiliaries": {}
+}

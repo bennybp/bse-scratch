@@ -1,0 +1,29 @@
+{
+  "molssi_bse_schema": {
+    "schema_type": "table",
+    "schema_version": "0.1"
+  },
+  "revision_description": "Data from Sebastian Ehlert",
+  "revision_date": "2021-02-25",
+  "elements": {
+    "1": "grimme/def2-mTZVP-JFIT.1.element.json",
+    "2": "grimme/def2-mTZVP-JFIT.1.element.json",
+    "3": "grimme/def2-mTZVP-JFIT.1.element.json",
+    "4": "grimme/def2-mTZVP-JFIT.1.element.json",
+    "5": "grimme/def2-mTZVP-JFIT.1.element.json",
+    "6": "grimme/def2-mTZVP-JFIT.1.element.json",
+    "7": "grimme/def2-mTZVP-JFIT.1.element.json",
+    "8": "grimme/def2-mTZVP-JFIT.1.element.json",
+    "9": "grimme/def2-mTZVP-JFIT.1.element.json",
+    "10": "grimme/def2-mTZVP-JFIT.1.element.json",
+    "11": "grimme/def2-mTZVP-JFIT.1.element.json",
+    "12": "grimme/def2-mTZVP-JFIT.1.element.json",
+    "13": "grimme/def2-mTZVP-JFIT.1.element.json",
+    "14": "grimme/def2-mTZVP-JFIT.1.element.json",
+    "15": "grimme/def2-mTZVP-JFIT.1.element.json",
+    "16": "grimme/def2-mTZVP-JFIT.1.element.json",
+    "17": "grimme/def2-mTZVP-JFIT.1.element.json",
+    "18": "grimme/def2-mTZVP-JFIT.1.element.json",
+    "26": "grimme/def2-mTZVP-JFIT.1.element.json"
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "molssi_bse_schema": {
+    "schema_type": "element",
+    "schema_version": "0.1"
+  },
+  "name": "def2-mTZVPP-JFIT",
+  "description": "Coulomb fitting set for r2SCAN-3c method",
+  "elements": {
+    "1": {
+      "components": [
+        "grimme/def2-mTZVPP-JFIT.1.json"
+      ]
+    },
+    "2": {
+      "components": [
+        "grimme/def2-mTZVPP-JFIT.1.json"
+      ]
+    },
+    "3": {
+      "components": [
+        "grimme/def2-mTZVPP-JFIT.1.json"
+      ]
+    },
+    "4": {
+      "components": [
+        "grimme/def2-mTZVPP-JFIT.1.json"
+      ]
+    },
+    "5": {
+      "components": [
+        "grimme/def2-mTZVPP-JFIT.1.json"
+      ]
+    },
+    "6": {
+      "components": [
+        "grimme/def2-mTZVPP-JFIT.1.json"
+      ]
+    },
+    "7": {
+      "components": [
+        "grimme/def2-mTZVPP-JFIT.1.json"
+      ]
+    },
+    "8": {
+      "components": [
+        "grimme/def2-mTZVPP-JFIT.1.json"
+      ]
+    },
+    "9": {
+      "components": [
+        "grimme/def2-mTZVPP-JFIT.1.json"
+      ]
+    },
+    "10": {
+      "components": [
+        "grimme/def2-mTZVPP-JFIT.1.json"
+      ]
+    },
+    "11": {
+      "components": [
+        "grimme/def2-mTZVPP-JFIT.1.json"
+      ]
+    },
+    "12": {
+      "components": [
+        "grimme/def2-mTZVPP-JFIT.1.json"
+      ]
+    },
+    "13": {
+      "components": [
+        "grimme/def2-mTZVPP-JFIT.1.json"
+      ]
+    },
+    "14": {
+      "components": [
+        "grimme/def2-mTZVPP-JFIT.1.json"
+      ]
+    },
+    "15": {
+      "components": [
+        "grimme/def2-mTZVPP-JFIT.1.json"
+      ]
+    },
+    "16": {
+      "components": [
+        "grimme/def2-mTZVPP-JFIT.1.json"
+      ]
+    },
+    "17": {
+      "components": [
+        "grimme/def2-mTZVPP-JFIT.1.json"
+      ]
+    },
+    "18": {
+      "components": [
+        "grimme/def2-mTZVPP-JFIT.1.json"
+      ]
+    },
+    "26": {
+      "components": [
+        "grimme/def2-mTZVPP-JFIT.1.json"
+      ]
+    }
+  }
+}

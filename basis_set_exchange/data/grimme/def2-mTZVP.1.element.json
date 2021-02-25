@@ -1,0 +1,510 @@
+{
+  "molssi_bse_schema": {
+    "schema_type": "element",
+    "schema_version": "0.1"
+  },
+  "name": "def2-mTZVP",
+  "description": "Small basis set used in B97-3c method",
+  "elements": {
+    "1": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "2": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "3": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "4": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "5": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "6": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "7": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "8": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "9": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "10": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "11": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "12": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "13": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "14": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "15": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "16": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "17": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "18": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "19": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "20": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "21": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "22": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "23": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "24": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "25": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "26": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "27": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "28": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "29": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "30": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "31": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "32": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "33": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "34": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "35": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "36": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "37": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "38": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "39": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "40": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "41": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "42": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "43": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "44": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "45": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "46": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "47": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "48": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "49": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "50": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "51": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "52": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "53": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "54": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "55": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "56": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "57": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "58": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "59": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "60": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "61": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "62": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "63": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "64": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "65": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "66": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "67": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "68": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "69": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "70": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "71": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "72": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "73": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "74": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "75": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "76": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "77": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "78": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "79": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "80": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "81": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "82": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "83": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "84": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "85": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "86": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "90": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "91": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "92": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "93": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "94": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "95": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "96": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "97": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "98": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "99": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "100": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "101": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "102": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    },
+    "103": {
+      "components": [
+        "grimme/def2-mTZVP.1.json"
+      ]
+    }
+  }
+}

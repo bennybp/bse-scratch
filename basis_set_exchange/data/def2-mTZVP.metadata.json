@@ -1,0 +1,14 @@
+{
+  "molssi_bse_schema": {
+    "schema_type": "metadata",
+    "schema_version": "0.1"
+  },
+  "names": [
+    "def2-mTZVP"
+  ],
+  "tags": [],
+  "family": "grimme",
+  "description": "Small basis set used in B97-3c method",
+  "role": "orbital",
+  "auxiliaries": {}
+}

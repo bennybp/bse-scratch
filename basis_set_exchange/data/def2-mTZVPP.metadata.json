@@ -1,0 +1,14 @@
+{
+  "molssi_bse_schema": {
+    "schema_type": "metadata",
+    "schema_version": "0.1"
+  },
+  "names": [
+    "def2-mTZVPP"
+  ],
+  "tags": [],
+  "family": "grimme",
+  "description": "Small basis set used in r2SCAN-3c method",
+  "role": "orbital",
+  "auxiliaries": {}
+}

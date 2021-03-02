@@ -15085,7 +15085,7 @@
       "gto_spherical"
     ],
     "auxiliaries": {
-      "optri": "cc-pvdz-f12-optri"
+      "optri": "cc-pvdz-f12-optri+"
     },
     "versions": {
       "0": {
@@ -15162,6 +15162,49 @@
         "revdate": "2012-06-08",
         "elements": [
           "1",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18"
+        ]
+      }
+    }
+  },
+  "cc-pvdz-f12-optri+": {
+    "display_name": "cc-pVDZ-F12-OPTRI+",
+    "other_names": [],
+    "description": "cc-pVDZ-F12-OPTRI+",
+    "latest_version": "1",
+    "tags": [],
+    "basename": "cc-pVDZ-F12-OPTRI+",
+    "relpath": "",
+    "family": "dunning_fit",
+    "role": "optri",
+    "function_types": [
+      "gto",
+      "gto_spherical"
+    ],
+    "auxiliaries": {},
+    "versions": {
+      "1": {
+        "file_relpath": "cc-pVDZ-F12-OPTRI+.1.table.json",
+        "revdesc": "Data from Grant Hill's ccRepo",
+        "revdate": "2021-02-25",
+        "elements": [
+          "1",
+          "2",
           "3",
           "4",
           "5",
@@ -16003,7 +16046,7 @@
       "gto_spherical"
     ],
     "auxiliaries": {
-      "optri": "cc-pvqz-f12-optri"
+      "optri": "cc-pvqz-f12-optri+"
     },
     "versions": {
       "0": {
@@ -16081,6 +16124,49 @@
         "revdate": "2012-06-08",
         "elements": [
           "1",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18"
+        ]
+      }
+    }
+  },
+  "cc-pvqz-f12-optri+": {
+    "display_name": "cc-pVQZ-F12-OPTRI+",
+    "other_names": [],
+    "description": "cc-pVQZ-F12-OPTRI+",
+    "latest_version": "1",
+    "tags": [],
+    "basename": "cc-pVQZ-F12-OPTRI+",
+    "relpath": "",
+    "family": "dunning_fit",
+    "role": "optri",
+    "function_types": [
+      "gto",
+      "gto_spherical"
+    ],
+    "auxiliaries": {},
+    "versions": {
+      "1": {
+        "file_relpath": "cc-pVQZ-F12-OPTRI+.1.table.json",
+        "revdesc": "Data from Grant Hill's ccRepo",
+        "revdate": "2021-02-25",
+        "elements": [
+          "1",
+          "2",
           "3",
           "4",
           "5",
@@ -17011,7 +17097,7 @@
       "gto_spherical"
     ],
     "auxiliaries": {
-      "optri": "cc-pvtz-f12-optri"
+      "optri": "cc-pvtz-f12-optri+"
     },
     "versions": {
       "0": {
@@ -17089,6 +17175,49 @@
         "revdate": "2012-06-08",
         "elements": [
           "1",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18"
+        ]
+      }
+    }
+  },
+  "cc-pvtz-f12-optri+": {
+    "display_name": "cc-pVTZ-F12-OPTRI+",
+    "other_names": [],
+    "description": "cc-pVTZ-F12-OPTRI+",
+    "latest_version": "1",
+    "tags": [],
+    "basename": "cc-pVTZ-F12-OPTRI+",
+    "relpath": "",
+    "family": "dunning_fit",
+    "role": "optri",
+    "function_types": [
+      "gto",
+      "gto_spherical"
+    ],
+    "auxiliaries": {},
+    "versions": {
+      "1": {
+        "file_relpath": "cc-pVTZ-F12-OPTRI+.1.table.json",
+        "revdesc": "Data from Grant Hill's ccRepo",
+        "revdate": "2021-02-25",
+        "elements": [
+          "1",
+          "2",
           "3",
           "4",
           "5",

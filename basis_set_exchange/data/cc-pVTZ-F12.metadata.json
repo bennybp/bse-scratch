@@ -11,6 +11,7 @@
   "description": "VTZ for explicitly correlated F12 variants of wavefunction methods",
   "role": "orbital",
   "auxiliaries": {
-    "optri": "cc-pvtz-f12-optri"
+    "optri": "cc-pvtz-f12-optri",
+    "optri": "cc-pvtz-f12-optri+"
   }
 }

@@ -1,0 +1,100 @@
+{
+  "molssi_bse_schema": {
+    "schema_type": "element",
+    "schema_version": "0.1"
+  },
+  "name": "cc-pVDZ-F12-OPTRI+",
+  "description": "cc-pVDZ-F12-OPTRI+",
+  "elements": {
+    "1": {
+      "components": [
+        "dunning_fit/cc-pVDZ-F12-OPTRI+.1.json"
+      ]
+    },
+    "2": {
+      "components": [
+        "dunning_fit/cc-pVDZ-F12-OPTRI+.1.json"
+      ]
+    },
+    "3": {
+      "components": [
+        "dunning_fit/cc-pVDZ-F12-OPTRI+.1.json"
+      ]
+    },
+    "4": {
+      "components": [
+        "dunning_fit/cc-pVDZ-F12-OPTRI+.1.json"
+      ]
+    },
+    "5": {
+      "components": [
+        "dunning_fit/cc-pVDZ-F12-OPTRI+.1.json"
+      ]
+    },
+    "6": {
+      "components": [
+        "dunning_fit/cc-pVDZ-F12-OPTRI+.1.json"
+      ]
+    },
+    "7": {
+      "components": [
+        "dunning_fit/cc-pVDZ-F12-OPTRI+.1.json"
+      ]
+    },
+    "8": {
+      "components": [
+        "dunning_fit/cc-pVDZ-F12-OPTRI+.1.json"
+      ]
+    },
+    "9": {
+      "components": [
+        "dunning_fit/cc-pVDZ-F12-OPTRI+.1.json"
+      ]
+    },
+    "10": {
+      "components": [
+        "dunning_fit/cc-pVDZ-F12-OPTRI+.1.json"
+      ]
+    },
+    "11": {
+      "components": [
+        "dunning_fit/cc-pVDZ-F12-OPTRI+.1.json"
+      ]
+    },
+    "12": {
+      "components": [
+        "dunning_fit/cc-pVDZ-F12-OPTRI+.1.json"
+      ]
+    },
+    "13": {
+      "components": [
+        "dunning_fit/cc-pVDZ-F12-OPTRI+.1.json"
+      ]
+    },
+    "14": {
+      "components": [
+        "dunning_fit/cc-pVDZ-F12-OPTRI+.1.json"
+      ]
+    },
+    "15": {
+      "components": [
+        "dunning_fit/cc-pVDZ-F12-OPTRI+.1.json"
+      ]
+    },
+    "16": {
+      "components": [
+        "dunning_fit/cc-pVDZ-F12-OPTRI+.1.json"
+      ]
+    },
+    "17": {
+      "components": [
+        "dunning_fit/cc-pVDZ-F12-OPTRI+.1.json"
+      ]
+    },
+    "18": {
+      "components": [
+        "dunning_fit/cc-pVDZ-F12-OPTRI+.1.json"
+      ]
+    }
+  }
+}

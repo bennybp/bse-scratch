@@ -4556,6 +4556,19 @@
     "year": "1999",
     "note": "As referenced in the Stuttgart ECP database/website"
   },
+  "shaw2017a": {
+    "_entry_type": "article",
+    "authors": [
+      "Shaw, Robert A.",
+      "Hill, Grant J."
+    ],
+    "title": "Approaching the Hartree--Fock Limit through the Complementary Auxiliary Basis Set Singles Correction and Auxiliary Basis Sets",
+    "journal": "J. Chem. Theory Comput.",
+    "volume": "13",
+    "pages": "1691-1698",
+    "year": "2017",
+    "doi": "10.1021/acs.jctc.7b00140"
+  },
   "sekiya1998a": {
     "_entry_type": "article",
     "authors": [

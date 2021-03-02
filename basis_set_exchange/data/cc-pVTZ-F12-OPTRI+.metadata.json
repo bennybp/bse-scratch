@@ -1,0 +1,14 @@
+{
+  "molssi_bse_schema": {
+    "schema_type": "metadata",
+    "schema_version": "0.1"
+  },
+  "names": [
+    "cc-pVTZ-F12-OPTRI+"
+  ],
+  "tags": [],
+  "family": "dunning_fit",
+  "description": "cc-pVTZ-F12-OPTRI+",
+  "role": "optri",
+  "auxiliaries": {}
+}

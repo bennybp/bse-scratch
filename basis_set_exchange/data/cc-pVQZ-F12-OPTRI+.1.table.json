@@ -1,0 +1,28 @@
+{
+  "molssi_bse_schema": {
+    "schema_type": "table",
+    "schema_version": "0.1"
+  },
+  "revision_description": "Data from Grant Hill's ccRepo",
+  "revision_date": "2021-02-25",
+  "elements": {
+    "1": "dunning_fit/cc-pVQZ-F12-OPTRI+.1.element.json",
+    "2": "dunning_fit/cc-pVQZ-F12-OPTRI+.1.element.json",
+    "3": "dunning_fit/cc-pVQZ-F12-OPTRI+.1.element.json",
+    "4": "dunning_fit/cc-pVQZ-F12-OPTRI+.1.element.json",
+    "5": "dunning_fit/cc-pVQZ-F12-OPTRI+.1.element.json",
+    "6": "dunning_fit/cc-pVQZ-F12-OPTRI+.1.element.json",
+    "7": "dunning_fit/cc-pVQZ-F12-OPTRI+.1.element.json",
+    "8": "dunning_fit/cc-pVQZ-F12-OPTRI+.1.element.json",
+    "9": "dunning_fit/cc-pVQZ-F12-OPTRI+.1.element.json",
+    "10": "dunning_fit/cc-pVQZ-F12-OPTRI+.1.element.json",
+    "11": "dunning_fit/cc-pVQZ-F12-OPTRI+.1.element.json",
+    "12": "dunning_fit/cc-pVQZ-F12-OPTRI+.1.element.json",
+    "13": "dunning_fit/cc-pVQZ-F12-OPTRI+.1.element.json",
+    "14": "dunning_fit/cc-pVQZ-F12-OPTRI+.1.element.json",
+    "15": "dunning_fit/cc-pVQZ-F12-OPTRI+.1.element.json",
+    "16": "dunning_fit/cc-pVQZ-F12-OPTRI+.1.element.json",
+    "17": "dunning_fit/cc-pVQZ-F12-OPTRI+.1.element.json",
+    "18": "dunning_fit/cc-pVQZ-F12-OPTRI+.1.element.json"
+  }
+}

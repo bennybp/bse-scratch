@@ -49,13 +49,6 @@ def replace_d(s):
     return s
 
 
-def function_type_from_am(shell_am, base_type, spherical_type):
-    if max(shell_am) <= 1:
-        return base_type
-    else:
-        return base_type + '_' + spherical_type
-
-
 def potential_am_list(max_am):
     '''Creates a canonical list of AM for use with ECP potentials
 
@@ -96,25 +89,6 @@ def remove_expected_line(lines, expected='', position=0):
     new_lines = lines[:]
     new_lines.pop(position)
     return new_lines
-
-
-def create_element_data(bs_data, element_Z, key, key_exist_ok=False, element_exist_ok=True, create=list):
-    '''Creates an element and a subkey of the element in bs_data
-
-    Note that bs_data is modified!
-    '''
-
-    if element_Z not in bs_data:
-        bs_data[element_Z] = {}
-    elif not element_exist_ok:
-        raise RuntimeError("Element {} already exists in basis data".format(element_Z))
-
-    if key not in bs_data[element_Z]:
-        bs_data[element_Z][key] = create()
-    elif not key_exist_ok:
-        raise RuntimeError("Key {} already exists in basis data for element {}".format(key, element_Z))
-
-    return bs_data[element_Z]
 
 
 def parse_line_regex(rex, line, description=None, convert_int=True):

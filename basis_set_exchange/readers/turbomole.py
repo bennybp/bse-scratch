@@ -1,5 +1,5 @@
 import re
-from .. import lut
+from .. import lut, manip
 from . import helpers
 
 section_re = re.compile(r'^\$(basis|ecp|cbas|jbas|jkbas)$')
@@ -41,7 +41,7 @@ def _parse_electron_lines(basis_lines, bs_data):
         element_sym, _ = helpers.parse_line_regex(element_re, element_lines[1], 'Element line')
 
         element_Z = lut.element_Z_from_sym(element_sym, as_str=True)
-        element_data = helpers.create_element_data(bs_data, element_Z, 'electron_shells')
+        element_data = manip.create_element_data(bs_data, element_Z, 'electron_shells')
 
         # Partition into shells
         shell_blocks = helpers.partition_lines(element_lines[3:], shell_re.match, min_size=2)
@@ -50,7 +50,7 @@ def _parse_electron_lines(basis_lines, bs_data):
             nprim, shell_am = helpers.parse_line_regex(shell_re, sh_lines[0], 'shell nprim, am')
             shell_am = lut.amchar_to_int(shell_am)
 
-            func_type = helpers.function_type_from_am(shell_am, 'gto', 'spherical')
+            func_type = lut.function_type_from_am(shell_am, 'gto', 'spherical')
 
             exponents, coefficients = helpers.parse_primitive_matrix(sh_lines[1:], nprim=nprim, ngen=1)
 
@@ -75,12 +75,12 @@ def _parse_ecp_potential_lines(element_lines, bs_data):
     element_Z = lut.element_Z_from_sym(element_sym, as_str=True)
 
     # We don't need the return value - we will use the one from creating ecp_electrons
-    helpers.create_element_data(bs_data, element_Z, 'ecp_potentials')
+    manip.create_element_data(bs_data, element_Z, 'ecp_potentials')
 
     # 4th line should be ncore and lmax
     n_elec, max_am = helpers.parse_line_regex(ecp_info_re, element_lines[1], 'ECP ncore, lmax')
 
-    element_data = helpers.create_element_data(bs_data, element_Z, 'ecp_electrons', key_exist_ok=False, create=int)
+    element_data = manip.create_element_data(bs_data, element_Z, 'ecp_electrons', key_exist_ok=False, create=int)
     element_data['ecp_electrons'] = n_elec
 
     # split the remaining lines by lines starting with a character

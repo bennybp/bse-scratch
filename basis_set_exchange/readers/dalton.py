@@ -1,5 +1,5 @@
 import re
-from .. import lut
+from .. import lut, manip
 from . import helpers
 from .nwchem import _parse_ecp_lines
 
@@ -82,7 +82,7 @@ def _parse_electron_lines(basis_lines, bs_data):
         else:
             raise RuntimeError("Unable to parse block in dalton: header line is \"{}\"".format(header))
 
-        element_data = helpers.create_element_data(bs_data, element_Z, 'electron_shells')
+        element_data = manip.create_element_data(bs_data, element_Z, 'electron_shells')
         el_lines.pop(0)
 
         # Remove all the rest of the comment lines
@@ -107,7 +107,7 @@ def _parse_electron_lines(basis_lines, bs_data):
                     ]
             exponents, coefficients = helpers.parse_primitive_matrix(bas_lines, nprim=nprim, ngen=ngen)
 
-            func_type = helpers.function_type_from_am([shell_am], 'gto', 'spherical')
+            func_type = lut.function_type_from_am([shell_am], 'gto', 'spherical')
 
             shell = {
                 'function_type': func_type,

@@ -1,5 +1,5 @@
 import re
-from .. import lut
+from .. import lut, manip
 from . import helpers
 
 element_entry_re = re.compile(r'^([a-zA-Z]{1,3}):(.*):(.*)$')
@@ -37,7 +37,7 @@ def read_gbasis(basis_lines):
         # We only support one basis per file
         found_basis.add(basis_name)
 
-        element_data = helpers.create_element_data(bs_data, element_Z, 'electron_shells')
+        element_data = manip.create_element_data(bs_data, element_Z, 'electron_shells')
         max_am = helpers.parse_line_regex(r'^(\d+)$', element_lines[1], 'Highest AM')
 
         # Split all the shells based on lines beginning with alpha character
@@ -55,7 +55,7 @@ def read_gbasis(basis_lines):
             shell_am, nprim, ngen = helpers.parse_line_regex(shell_info_re, shell_lines[0], 'Shell: AM, nprim, ngen')
             shell_am = lut.amchar_to_int(shell_am)
 
-            func_type = helpers.function_type_from_am(shell_am, 'gto', 'spherical')
+            func_type = lut.function_type_from_am(shell_am, 'gto', 'spherical')
 
             if len(shell_am) > 1:
                 raise RuntimeError("Fused AM not supported by gbasis")

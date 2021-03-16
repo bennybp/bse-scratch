@@ -1,5 +1,5 @@
 import re
-from .. import lut
+from .. import lut, manip
 from . import helpers
 
 am_line_re = re.compile(r'^([A-Za-z]+)\s+([A-Za-z]+)$')
@@ -31,9 +31,9 @@ def _parse_electron_lines(basis_lines, bs_data):
         shell_am = lut.amchar_to_int(shell_am)
 
         element_Z = lut.element_Z_from_sym(element_sym, as_str=True)
-        element_data = helpers.create_element_data(bs_data, element_Z, 'electron_shells', key_exist_ok=True)
+        element_data = manip.create_element_data(bs_data, element_Z, 'electron_shells', key_exist_ok=True)
 
-        func_type = helpers.function_type_from_am(shell_am, 'gto', am_type)
+        func_type = lut.function_type_from_am(shell_am, 'gto', am_type)
 
         # How many columns of coefficients do we have?
         # Only if this is a fused shell do we know
@@ -78,13 +78,13 @@ def _parse_ecp_lines(basis_lines, bs_data):
             element_sym, n_elec = helpers.parse_line_regex(nelec_re, pot_lines[0].lower(), "ECP: Element sym, nelec")
 
             element_Z = lut.element_Z_from_sym(element_sym, as_str=True)
-            element_data = helpers.create_element_data(bs_data, element_Z, 'ecp_electrons', create=int)
+            element_data = manip.create_element_data(bs_data, element_Z, 'ecp_electrons', create=int)
             element_data['ecp_electrons'] = n_elec
         else:
             element_sym, pot_am = helpers.parse_line_regex(am_line_re, pot_lines[0], "ECP: Element sym, pot AM")
 
             element_Z = lut.element_Z_from_sym(element_sym, as_str=True)
-            element_data = helpers.create_element_data(bs_data, element_Z, 'ecp_potentials', key_exist_ok=True)
+            element_data = manip.create_element_data(bs_data, element_Z, 'ecp_potentials', key_exist_ok=True)
 
             # See if this is the 'ul' angular momentum
             if pot_am.lower() == 'ul':

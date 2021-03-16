@@ -109,6 +109,7 @@ def _bse_cli_get_basis(args):
                          optimize_general=args.opt_gen,
                          augment_diffuse=args.aug_diffuse,
                          augment_steep=args.aug_steep,
+                         get_aux=args.get_aux,
                          data_dir=args.data_dir,
                          header=not args.noheader)
 

@@ -1,5 +1,5 @@
 import re
-from .. import lut
+from .. import lut, manip
 from . import helpers
 
 element_re = re.compile(r'^-?([A-Za-z]{1,3})(?:\s+0)?$')
@@ -32,7 +32,7 @@ def _parse_electron_lines(basis_lines, bs_data):
     element_sym = element_sym.lstrip('-')
 
     element_Z = lut.element_Z_from_sym(element_sym, as_str=True)
-    element_data = helpers.create_element_data(bs_data, element_Z, 'electron_shells')
+    element_data = manip.create_element_data(bs_data, element_Z, 'electron_shells')
 
     # After that come shells. We determine the start of a shell
     # by if the line starts with an angular momentum (a non-numeric character
@@ -43,7 +43,7 @@ def _parse_electron_lines(basis_lines, bs_data):
         shell_am, nprim, scaling_factors = helpers.parse_line_regex(am_line_re, sh_lines[0],
                                                                     "Shell AM, nprim, scaling")
         shell_am = lut.amchar_to_int(shell_am, hij=True)
-        func_type = helpers.function_type_from_am(shell_am, 'gto', 'spherical')
+        func_type = lut.function_type_from_am(shell_am, 'gto', 'spherical')
 
         # Handle gaussian scaling factors
         # The square of the scaling factor is applied to exponents.
@@ -111,7 +111,7 @@ def _parse_ecp_lines(basis_lines, bs_data):
     # First line is "{element} 0", with the zero being optional
     element_sym = basis_lines[0].split()[0]
     element_Z = lut.element_Z_from_sym(element_sym, as_str=True)
-    element_data = helpers.create_element_data(bs_data, element_Z, 'ecp_potentials')
+    element_data = manip.create_element_data(bs_data, element_Z, 'ecp_potentials')
 
     # Second line is information about the ECP
     max_am, ecp_electrons = helpers.parse_line_regex(ecp_am_nelec_re, basis_lines[1], 'ECP max_am, nelec')

@@ -104,6 +104,10 @@ def run_bse_cli():
     subp.add_argument('--make-gen', action='store_true', help='Make the basis set as generally-contracted as possible')
     subp.add_argument('--aug-steep', type=int, default=0, help='Augment with n steep functions')
     subp.add_argument('--aug-diffuse', type=int, default=0, help='Augment with n diffuse functions')
+    subp.add_argument('--get-aux',
+                      type=int,
+                      default=0,
+                      help='Instead of the orbital basis, get an automatically formed auxiliary basis')
 
     # get-refs subcommand
     subp = subparsers.add_parser('get-refs', help='Output references for a basis set')

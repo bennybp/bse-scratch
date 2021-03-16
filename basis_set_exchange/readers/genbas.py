@@ -1,5 +1,5 @@
 import re
-from .. import lut, misc
+from .. import lut, misc, manip
 from . import helpers
 from .turbomole import _parse_ecp_potential_lines
 
@@ -16,7 +16,7 @@ def _parse_electron_lines(basis_lines, bs_data):
     element_sym, _ = helpers.parse_line_regex(element_block_re, basis_lines[0])
     element_Z = lut.element_Z_from_sym(element_sym, as_str=True)
 
-    element_data = helpers.create_element_data(bs_data, element_Z, 'electron_shells')
+    element_data = manip.create_element_data(bs_data, element_Z, 'electron_shells')
 
     basis_lines = basis_lines[2:]
 
@@ -40,7 +40,7 @@ def _parse_electron_lines(basis_lines, bs_data):
         nprim = shell_nprims[shell_idx]
         ngen = shell_ngens[shell_idx]
 
-        func_type = helpers.function_type_from_am(shell_am, 'gto', 'spherical')
+        func_type = lut.function_type_from_am(shell_am, 'gto', 'spherical')
 
         # Read in exponents and coefficients
         # We know the dimensions of the coefficient matrix. That matrix
@@ -80,7 +80,7 @@ def _parse_ecp_lines(basis_lines, bs_data):
     #element_sym, _ = helpers.parse_line_regex(element_block_re, basis_lines[0])
     #element_Z = str(lut.element_Z_from_sym(element_sym))
 
-    #element_data = helpers.create_element_data(bs_data, element_Z, 'ecp_potentials')
+    #element_data = manip.create_element_data(bs_data, element_Z, 'ecp_potentials')
 
     # We can use the turbomole parser for ECP.
     # However, needs to be fixed

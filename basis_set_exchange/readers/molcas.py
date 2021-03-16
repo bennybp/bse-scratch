@@ -1,5 +1,5 @@
 import re
-from .. import lut, misc
+from .. import lut, manip, misc
 from . import helpers
 
 element_head_re = re.compile(r'^/([a-zA-Z]{1,3})\.(?:ECP\.)?([^.]+)\..*$')
@@ -14,7 +14,7 @@ ecp_pot_begin_re = re.compile(r'^(\d+)\s*;.*$')  # Sometime comments are after t
 
 
 def _parse_electron_lines(basis_lines, bs_data, element_Z):
-    element_data = helpers.create_element_data(bs_data, element_Z, 'electron_shells')
+    element_data = manip.create_element_data(bs_data, element_Z, 'electron_shells')
 
     # Handle the options block
     # This specifies the kind of data that might be found at the end of the element block
@@ -98,7 +98,7 @@ def _parse_electron_lines(basis_lines, bs_data, element_Z):
         coefficients = misc.transpose_matrix(coefficients)
 
         # Now add to the bs_data
-        func_type = helpers.function_type_from_am([shell_am], 'gto', 'spherical')
+        func_type = lut.function_type_from_am([shell_am], 'gto', 'spherical')
 
         shell = {
             'function_type': func_type,
@@ -125,7 +125,7 @@ def _parse_ecp_lines(basis_lines, bs_data, element_Z):
     if element_Z_ecp != element_Z:
         raise RuntimeError("ECP element Z={} found in block for element Z={}".format(element_Z, element_Z_ecp))
 
-    element_data = helpers.create_element_data(bs_data, element_Z, 'ecp_potentials')
+    element_data = manip.create_element_data(bs_data, element_Z, 'ecp_potentials')
 
     # Does the ecp_electrons key exist? This may have been determined when reading the
     # electron shells above

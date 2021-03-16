@@ -102,6 +102,7 @@ def get_basis(name,
               optimize_general=False,
               augment_diffuse=0,
               augment_steep=0,
+              get_aux=0,
               data_dir=None,
               header=True):
     '''Obtain a basis set
@@ -164,6 +165,10 @@ def get_basis(name,
         Add n diffuse functions by even-tempered extrapolation
     augment_steep : int
         Add n steep functions by even-tempered extrapolation
+    get_aux : int
+        Instead of the orbital basis, get an auxiliary basis
+        set. Options 0 (return orbital basis), 1 (return AutoAux
+        basis), 2 (return Auto-ABS Coulomb fitting basis)
     data_dir : str
         Data directory with all the basis set information. By default,
         it is in the 'data' subdirectory of this project.
@@ -173,6 +178,7 @@ def get_basis(name,
     str or dict
         The basis set in the desired format. If `fmt` is **None**, this will be a python
         dictionary. Otherwise, it will be a string.
+
     '''
 
     data_dir = fix_data_dir(data_dir)
@@ -271,6 +277,12 @@ def get_basis(name,
     # Re-make general
     if (augment_diffuse > 0 or augment_steep > 0) and make_general:
         basis_dict = manip.make_general(basis_dict, False, False)
+
+    # Did we actually want an auxiliary basis set?
+    if get_aux == 1:
+        basis_dict = manip.autoaux_basis(basis_dict)
+    elif get_aux == 2:
+        basis_dict = manip.autoabs_basis(basis_dict)
 
     # If fmt is not specified, return as a python dict
     if fmt is None:

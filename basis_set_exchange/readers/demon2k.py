@@ -1,7 +1,7 @@
 # Written by Susi Lehtola, 2021
 
 import re
-from .. import lut
+from .. import lut, manip
 from . import helpers
 
 # Orbital entry: O-ELEMENT [possible repetition(s) of element symbol] (name)
@@ -34,7 +34,7 @@ def _parse_electron_lines(basis_lines, bs_data):
 
     # Create basis
     element_Z = lut.element_Z_from_name(element_name, as_str=True)
-    element_data = helpers.create_element_data(bs_data, element_Z, 'electron_shells')
+    element_data = manip.create_element_data(bs_data, element_Z, 'electron_shells')
 
     # Second line is number of shells
     n_shells = int(basis_lines[1].split()[0])
@@ -58,7 +58,7 @@ def _parse_electron_lines(basis_lines, bs_data):
         exponents, coefficients = helpers.parse_primitive_matrix(sh_lines[1:1 + nprim], nprim, ngen)
 
         # Function type (assuming always spherical)
-        func_type = helpers.function_type_from_am(shell_am, 'gto', 'spherical')
+        func_type = lut.function_type_from_am(shell_am, 'gto', 'spherical')
         shell = {
             'function_type': func_type,
             'region': '',
@@ -91,7 +91,7 @@ def _parse_ecp_lines(ecp_lines, bs_data):
 
         # Initialize basis
         element_Z = lut.element_Z_from_sym(element_sym, as_str=True)
-        element_data = helpers.create_element_data(bs_data, element_Z, 'ecp_potentials')
+        element_data = manip.create_element_data(bs_data, element_Z, 'ecp_potentials')
         element_data['ecp_electrons'] = ecp_electrons
 
         # Read angular momentum blocks

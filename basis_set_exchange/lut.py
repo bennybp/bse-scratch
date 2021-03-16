@@ -332,3 +332,10 @@ def electron_shells_start(nelectrons, max_am=20):
     start.extend(range(5, max_am + 2))
 
     return start
+
+
+def function_type_from_am(shell_am, base_type, spherical_type):
+    if max(shell_am) <= 1:
+        return base_type
+    else:
+        return base_type + '_' + spherical_type

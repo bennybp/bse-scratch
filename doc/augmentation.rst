@@ -9,6 +9,31 @@ diffuse functions into augmented basis sets, or the improved
 description of the wave function close to the nucleus by adding more
 steep functions into a basis set.
 
+Manual extrapolation
+--------------------
+
+The traditional, well-known approach to augmenting basis sets with
+extra functions is to rely on a rule of thumb to obtain the extra
+functions. For instance, one can generate extra steep functions by
+taking the largest exponent in the basis and multiplying it by a
+factor of e.g. 3. If this function results in noticeable changes to
+computed properties, the next step is to add another function by
+multiplying the largest exponent in the original basis by 3*3 = 9, and
+so on. The same procedure can also be used for diffuse exponents;
+dividing the smallest exponent by e.g. 3 yields a new trial exponent.
+
+This procedure has also been used by Zheng and coworkers to define
+"minimally augmented" Karlsruhe basis sets
+(http://doi.org/10.1007/s00214-010-0846-z), where one diffuse s and p
+exponent are added to an original def2 basis set.
+
+The manual extrapolation functionality is implemented in the
+:func:`basis_set_exchange.manip.manual_augmentation` function.
+
+
+Dunning-style extrapolation
+---------------------------
+
 The extrapolation works by taking the two outermost primitives in the
 basis, :math:`X` and :math:`Y`. We assume :math:`X` to be the steepest
 or most diffuse, and :math:`Y` is the second-steepest or second-most
@@ -107,3 +132,4 @@ Therefore, He/q-aug-cc-pVTZ will be::
           2.508E-02              1.0
     He    D
           5.860E-03              1.
+

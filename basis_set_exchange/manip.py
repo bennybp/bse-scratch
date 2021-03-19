@@ -637,6 +637,152 @@ def geometric_augmentation(basis, nadd, use_copy=True, as_component=False, steep
     return basis
 
 
+def manual_augmentation(basis, spacings, nadd=1, use_copy=True, as_component=False, steep=False):
+    '''Extends a basis set by adding diffuse or steep functions with the manually determined spacing.
+
+    This is a commonly-used method for studying the convergence of
+    molecular properties with respect to diffuse or steep functions in
+    the basis.
+
+    It has also been used by Zheng et al to parametrize
+    minimally-augmented Karlsruhe basis sets in
+    doi:10.1007/s00214-010-0846-z, where diffuse exponents are added
+    to the s and p shells with a spacing of 3.0.
+
+    Parameters
+    ----------
+    basis : dict
+        Basis set dictionary to work with
+    spacings : float or list
+        The even-tempered spacing to use for the additional
+        exponents. If given as a float, all shells are augmented by
+        the specified factor. If given as a list, the list index is
+        interpreted as the angular momentum; momenta greater than the
+        list length are not augmented.
+    nadd: int
+        Number of functions to add (must be >=1).
+    use_copy: bool
+        If True, the input basis set is not modified.
+    steep: bool
+        If True, the augmentation is done for steep functions instead of diffuse functions.
+
+    '''
+
+    if nadd < 1:
+        raise RuntimeError("Adding {} functions makes no sense for geometric_augmentation".format(nadd))
+    if not isinstance(spacings, list) or not isinstance(spacings, float):
+        raise RuntimeError("spacings must be a list or float")
+
+    if isinstance(spacings, list):
+        if not all([sp > 1.0 for sp in spacings]):
+            raise RuntimeError('Spacing must be greater than one!')
+    else:
+        if not (spacings > 1.0):
+            raise RuntimeError('Spacing must be greater than one!')
+
+    # We need to combine shells by AM
+    # I guess we don't NEED to, but it makes things a lot easier
+    basis_copy = make_general(basis, use_copy=True)
+
+    # We will now store the new shells in 'basis'
+    # If as_component is specified, then create a new empty component basis
+    if as_component:
+        basis = skel.create_skel('component')
+        basis['elements'] = {k: {} for k, v in basis_copy['elements'].items() if 'electron_shells' in v}
+    elif use_copy:
+        basis = copy.deepcopy(basis)
+
+    for el_z, eldata in basis_copy['elements'].items():
+        if 'electron_shells' not in eldata:
+            continue
+
+        new_shells = []
+
+        for shell in eldata['electron_shells']:
+            # Find the smallest exponent.
+            exponents = [(float(x), idx) for idx, x in enumerate(shell['exponents'])]
+            sorted_exponents = sorted(exponents)
+
+            if steep:
+                # If we're augmenting by steep functions, the
+                # reference is the steepest function
+                ref_idx = -1
+            else:
+                # If we're augmenting by diffuse functions, the
+                # reference is the diffusemost function.
+                ref_idx = 0
+
+            ref_exp, ref_idx = sorted_exponents[ref_idx]
+
+            # Get the spacing for the shell
+            shell_am = shell['angular_momentum']
+
+            # Special handling for SP shells
+            if len(shell_am) > 1:
+                if isinstance(spacings, list):
+                    # Spacings must be defined for all members of shell
+                    if len(spacings) <= max(shell_am):
+                        raise RuntimeError('Spacing has to be defined for all angular momenta of SP shell!')
+                    # Collect the spacings
+                    betas = [spacings[am] for am in shell_am]
+                    # Augmentation only makes sense if all betas are the same
+                    # angular momentum dependent spacing
+                    if betas.count(betas[0]) != len(betas):
+                        raise RuntimeError('Spacing has to be the same for all angular momenta of SP shell!')
+                    beta = betas[0]
+                else:
+                    beta = spacings
+
+            # and "normal" shells
+            else:
+                if isinstance(spacings, list):
+                    if shell_am[0] >= len(spacings):
+                        # Shell should not be augmented
+                        continue
+
+                    # angular momentum dependent spacing
+                    beta = spacings[shell_am]
+                else:
+                    beta = spacings
+
+            # Test that the primitive for the reference is free;
+            # otherwise the extrapolation makes little sense as you
+            # probably have a huge contraction error
+            free_prims = _free_primitives(shell['coefficients'])
+            if (ref_idx not in free_prims) or (next_idx not in free_prims):
+                continue
+
+            # Form new exponents
+            new_exponents = []
+            if steep:
+                for i in range(1, nadd + 1):
+                    new_exponents.append(ref_exp * (beta**i))
+            else:
+                for i in range(1, nadd + 1):
+                    new_exponents.append(ref_exp / (beta**i))
+
+            new_exponents = ['{:.6e}'.format(x) for x in new_exponents]
+
+            # add the new exponents as new uncontracted shells
+            for ex in new_exponents:
+                new_shells.append({
+                    'function_type': shell['function_type'],
+                    'region': shell['region'],
+                    'angular_momentum': shell['angular_momentum'],
+                    'exponents': [ex],
+                    'coefficients': [['1.00000000']]
+                })
+
+        # add the shells to the original basis set
+        # (if this is a component basis, then 'electron_shells' may not exist)
+        if 'electron_shells' not in basis['elements'][el_z]:
+            basis['elements'][el_z]['electron_shells'] = []
+
+        basis['elements'][el_z]['electron_shells'].extend(new_shells)
+
+    return basis
+
+
 def remove_primitive(electron_shell, idx_to_remove):
     '''Removes a primitive (by index) of a electron_shell
 

@@ -100,6 +100,7 @@ def get_basis(name,
               remove_free_primitives=False,
               make_general=False,
               optimize_general=False,
+              optimize_segmented=False,
               augment_diffuse=0,
               augment_steep=0,
               data_dir=None,
@@ -158,8 +159,18 @@ def get_basis(name,
         If True, make the basis set as generally-contracted as possible. There will be one
         shell per angular momentum (for each element)
     optimize_general : bool
-        Optimize by removing general contractions that contain uncontracted
-        functions (see :func:`basis_set_exchange.manip.optimize_general`)
+        Optimize generally contracted basis for codes using segmented
+        contractions by dropping free primitives from the contracted
+        functions (see
+        :func:`basis_set_exchange.manip.optimize_general`).
+    optimize_segmented : bool
+        Optimize generally contracted basis for codes using segmented
+        contractions by dropping free primitives from the contracted
+        functions (see
+        :func:`basis_set_exchange.manip.optimize_general`), and then
+        running P-orthogonalization (a numerically stable Davidson
+        purification) to remove redundancies in the remaining
+        functions.
     augment_diffuse : int
         Add n diffuse functions by even-tempered extrapolation
     augment_steep : int
@@ -173,6 +184,7 @@ def get_basis(name,
     str or dict
         The basis set in the desired format. If `fmt` is **None**, this will be a python
         dictionary. Otherwise, it will be a string.
+
     '''
 
     data_dir = fix_data_dir(data_dir)
@@ -252,6 +264,9 @@ def get_basis(name,
     # Remove dead and duplicate shells
     if needs_pruning:
         basis_dict = manip.prune_basis(basis_dict, False)
+
+    if optimize_segmented:
+        basis_dict = manip.P_orthogonalization(basis_dict, use_copy=False)
 
     # Augment
     if augment_diffuse > 0:

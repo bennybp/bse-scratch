@@ -6,7 +6,10 @@ data, as well as some other small functions.
 """
 
 import copy
+from math import sqrt
 from . import skel, misc
+from .ints import inner_product, _gto_overlap
+from .sort import sort_basis
 
 
 def merge_element_data(dest, sources, use_copy=True):
@@ -467,45 +470,228 @@ def optimize_general(basis, use_copy=True):
             continue
 
         elshells = eldata['electron_shells']
+        new_shells = []
         for sh in elshells:
             exponents = sh['exponents']
             coefficients = sh['coefficients']
             nprim = len(exponents)
             nam = len(sh['angular_momentum'])
+            ncontr = len(coefficients)
 
             # Skip sp shells and shells with only one general contraction
-            if nam > 1 or len(coefficients) < 2:
+            if nam > 1 or len(coefficients) == 1:
+                new_shells.append(sh)
                 continue
 
             # First, find columns (general contractions) with a single non-zero value
             single_columns = [idx for idx, c in enumerate(coefficients) if _is_single_column(c)]
 
-            # Find the corresponding rows that have a value in one of these columns
-            # Note that at this stage, the row may have coefficients in more than one
-            # column. That is what we are looking for
-
-            # Also, test to see that each row is only represented once. That is, there should be
-            # no rows that are part of single columns (this would represent duplicate shells).
-            # This can happen in poorly-formatted basis sets and is an error
-            row_col_pairs = []
-            all_row_idx = []
+            # Find the indices of the free primitives
+            free_primitive_idx = []
             for col_idx in single_columns:
                 col = coefficients[col_idx]
                 for row_idx in range(nprim):
                     if float(col[row_idx]) != 0.0:
-                        if row_idx in all_row_idx:
-                            raise RuntimeError("Badly-formatted basis. Row {} makes duplicate shells".format(row_idx))
+                        free_primitive_idx.append(row_idx)
+                        break
 
-                        # Store the index of the nonzero value in single_columns
-                        row_col_pairs.append((row_idx, col_idx))
-                        all_row_idx.append(row_idx)
+            # Now, we can zero out the rows corresponding to free primitives
+            for icontr in range(ncontr):
+                # Skip the free primitives themselves
+                if icontr in single_columns:
+                    continue
 
-            # Now for each row/col pair, zero out the entire row
-            # EXCEPT for the column that has the single value
-            for row_idx, col_idx in row_col_pairs:
-                for idx, col in enumerate(coefficients):
-                    if float(col[row_idx]) != 0.0 and col_idx != idx:
-                        col[row_idx] = '0.0000000E+00'
+                # Zero out the row for the free primitive
+                col = coefficients[icontr]
+                for iprim in free_primitive_idx:
+                    if float(col[iprim]) != 0.0:
+                        col[iprim] = '0.0'
+
+            # Next, we split off the free primitives onto their own
+            # shells; we need this for P-orthogonalization
+            contracted_rows = [irow for irow in range(nprim) if irow not in free_primitive_idx]
+            contracted_cols = [icol for icol in range(ncontr) if icol not in single_columns]
+            new_coefficients = [[coefficients[icol][irow] for irow in contracted_rows] for icol in contracted_cols]
+            new_exponents = [exponents[iprim] for iprim in contracted_rows]
+
+            nnewprim = len(new_exponents)
+            nnewcontr = len(new_coefficients)
+
+            for irow in free_primitive_idx:
+                new_shell = sh.copy()
+                new_shell['exponents'] = [exponents[irow]]
+                new_shell['coefficients'] = [['1.0']]
+                new_shells.append(new_shell)
+
+            if nnewprim > 0 and nnewcontr > 0:
+                sh['exponents'] = new_exponents
+                sh['coefficients'] = new_coefficients
+                new_shells.append(sh)
+
+        eldata['electron_shells'] = new_shells
+    return basis
+
+
+def P_orthogonalization(basis, cutoff=1e-5, Cortho=1e-4, use_copy=True):
+    """Optimizes a general contraction using P-orthogonalization
+
+    .. seealso :: | F. Jensen
+                  | 'Unifying General and Segmented Contracted Basis Sets. Segmented Polarization Consistent Basis Sets'
+                  | J. Chem. Theory Comput. 10, 1074 (2014)
+                  | https://doi.org/10.1021/ct401026a
+
+    which is a numerically stabler version of Davidson's procedure for
+    removing redundancies in generally contracted sets (Davidson
+    purification)
+
+    .. seealso :: | T. Hashimoto, K. Hirao, H. Tatewaki
+                  | 'Comment on "Comment on Dunning's correlation-consistent basis set"'
+                  | Chemical Physics Letters 260, 514 (1996)
+                  | https://doi.org/10.1016/0009-2614(96)00917-7
+
+    which is was an improvement over the observation that free
+    primitives can in principle be dropped from the contracted
+    functions without affecting numerical results
+
+    .. seealso :: | T. Hashimoto, K. Hirao, H. Tatewaki
+                  | 'Comment on Dunning's correlation-consistent basis set'
+                  | Chemical Physics Letters 243, 190 (1995)
+                  | https://doi.org/10.1016/0009-2614(95)00807-G
+
+    P-orthogonalization, like Davidson's method, relies on numerical
+    transformations, thereby changing the matrix of contraction
+    coefficents.
+
+    Parameters
+    ----------
+    basis: dict
+        Basis set dictionary to work with
+
+    cutoff: float
+        threshold for dropping primitives with small contraction
+        coefficients in the representation where the largest
+        coefficient is 1.0. Jensen states: "a coeﬃcient cutoff
+        parameter of ∼1e-5 will for most practical applications
+        produce negligible differences in the final results".
+
+    Cortho: float
+        linear dependence threshold used in the procedure: if
+        1-O^P_{ij} < Cortho, the functions i and j are linearly
+        dependent up to the primitive function P (see eq 6 in paper).
+
+    use_copy: bool
+        If True, the input basis set is not modified.
+
+    """
+
+    # First, we drop the free functions from the contractions
+    basis = optimize_general(basis, use_copy=use_copy)
+    # and sort the basis so that the exponents are in decreasing order
+    basis = sort_basis(basis, use_copy=False)
+
+    for eldata in basis['elements'].values():
+
+        if 'electron_shells' not in eldata:
+            continue
+
+        elshells = eldata['electron_shells']
+        for sh in elshells:
+            exponents = sh['exponents']
+            coefficients = sh['coefficients']
+            nprim = len(exponents)
+            ncontr = len(coefficients)
+            sh_am = sh['angular_momentum']
+            nam = len(sh_am)
+
+            # Skip sp shells
+            if nam > 1:
+                continue
+
+            # If the number of exponents and coefficients matches, we
+            # can free all primitives.
+            if nprim == ncontr:
+                coefficients = []
+                for icontr in range(ncontr):
+                    coefficients.append(['1.0' if iprim == icontr else '0.0' for iprim in range(nprim)])
+                sh['coefficients'] = coefficients
+                continue
+
+            # Convert to floating-point format
+            exps = [float(x) for x in exponents]
+            C = [[float(c) for c in ccol] for ccol in coefficients]
+            # We also need the primitive overlap matrix
+            primitive_overlap = _gto_overlap(exps, sh_am[0])
+
+            def normalized_partial_overlap(Ci, S, Cj, nfun):
+                '''Computes the normalized partial overlap using only a subset of the primitives'''
+                assert nfun >= 1
+
+                Ssub = [[S[iidx][jidx] for jidx in range(nfun)] for iidx in range(nfun)]
+                Cisub = [Ci[idx] for idx in range(nfun)]
+                Cjsub = [Cj[idx] for idx in range(nfun)]
+                nprod = abs(
+                    inner_product(Cisub, Ssub, Cjsub) /
+                    sqrt(inner_product(Cisub, Ssub, Cisub) * inner_product(Cjsub, Ssub, Cjsub)))
+                return nprod
+
+            def inside_out():
+                '''Inside-out purification'''
+                for icontr in range(ncontr):
+                    # Determine level of P-orthogonalization
+                    for Plevel in range(nprim - 1, 0, -1):
+                        # Compute the normalized partial overlaps
+                        overlap_diff = [
+                            1 - normalized_partial_overlap(C[icontr], primitive_overlap, C[jcontr], Plevel)
+                            for jcontr in range(icontr + 1, ncontr)
+                        ]
+                        # Is Plevel sufficient?
+                        if (not all([diff <= Cortho for diff in overlap_diff])) and (Plevel != nprim):
+                            # No, it is not
+                            continue
+
+                        # Orthogonalize functions
+                        for jcontr in range(icontr + 1, ncontr):
+                            # x factor according to eq 8
+                            x = normalized_partial_overlap(C[icontr], primitive_overlap, C[jcontr], Plevel)
+                            # Subtract
+                            for iprim in range(nprim):
+                                C[jcontr][iprim] -= x * C[icontr][iprim]
+
+                        # Break the p loop, continue with next icontr
+                        break
+
+            def outside_in():
+                '''Outside-in purification; this is stable according to Jensen'''
+                for icontr in range(ncontr - 1, -1, -1):
+                    for jcontr in range(icontr - 1, -1, -1):
+                        # Reference primitive index
+                        refprim = nprim - 1 - (ncontr - 1 - icontr)
+                        x = C[jcontr][refprim] / C[icontr][refprim]
+                        # Subtract
+                        for iprim in range(nprim):
+                            C[jcontr][iprim] -= x * C[icontr][iprim]
+
+            def intermediate_normalization():
+                '''Normalize largest coefficient to +-1'''
+                for icontr in range(ncontr):
+                    maxabs = max([abs(c) for c in C[icontr]])
+                    C[icontr] = [C[icontr][iprim] / maxabs for iprim in range(nprim)]
+
+            def drop_small_coeffs():
+                '''Set small coefficients to zero'''
+                for icontr in range(ncontr):
+                    for iprim in range(nprim):
+                        if C[icontr][iprim] != 0.0 and abs(C[icontr][iprim]) <= cutoff:
+                            C[icontr][iprim] = 0.0
+
+            inside_out()
+            outside_in()
+            intermediate_normalization()
+            drop_small_coeffs()
+
+            # Create new contraction matrix
+            coefficients = [['{:.15e}'.format(C[i][j]) for j in range(nprim)] for i in range(ncontr)]
+            sh['coefficients'] = coefficients
 
     return basis
 

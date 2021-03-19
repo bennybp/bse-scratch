@@ -21,6 +21,15 @@ def _transform_numpy(C0, P0):
     return [[np_result[i][j] for i in range(np_result.shape[0])] for j in range(np_result.shape[1])]
 
 
+def _inner_product_numpy(Cleft0, P0, Cright0):
+    '''Transforms the primitive integrals P into the contracted basis C using NumPy'''
+    Cleft = numpy.asarray(Cleft0)
+    Cright = numpy.asarray(Cright0)
+    P = numpy.asarray(P0)
+    ip = numpy.dot(Cleft, numpy.dot(P, Cright))
+    return ip
+
+
 def _matmul(A, B):
     '''Matrix multiply'''
     assert (len(A[0]) == len(B))
@@ -41,6 +50,18 @@ def _transform_python(C, P):
     Ct = [[C[j][i] for j in range(nrows)] for i in range(ncols)]
     # Transform
     return _matmul(C, _matmul(P, Ct))
+
+
+def _inner_product_python(Cleft, P, Cright):
+    '''Calculates the inner product of Cleft and Cright against metric P in pure Python'''
+
+    assert len(Cleft) == len(P)
+    assert len(P[0]) == len(Cright)
+    assert len(Cleft) == len(Cright)
+    nprim = len(Cleft)
+
+    CP = [sum([Cleft[i] * P[i][j] for i in range(nprim)]) for j in range(nprim)]
+    return sum([CP[i] * Cright[i] for i in range(nprim)])
 
 
 def _to_float(M):
@@ -78,6 +99,15 @@ def _transform(C, P):
         return _transform_numpy(C, P)
     else:
         return _transform_python(C, P)
+
+
+def inner_product(Cleft, P, Cright):
+    '''Calculates the inner product of Cleft and Cright in metric P'''
+
+    if _use_numpy:
+        return _inner_product_numpy(Cleft, P, Cright)
+    else:
+        return _inner_product_python(Cleft, P, Cright)
 
 
 def _zero_matrix(N):

@@ -7,6 +7,7 @@ import bz2
 from ..skel import create_skel
 from ..validator import validate_data
 from ..compose import _whole_basis_types
+from ..manip import split_blocked_contractions
 from .turbomole import read_turbomole
 from .g94 import read_g94
 from .nwchem import read_nwchem
@@ -114,6 +115,9 @@ def read_formatted_basis_str(basis_str, basis_fmt, validate=False, as_component=
     # Validate if desired
     if validate:
         validate_data(bs_type, data)
+
+    # Split any blocked contractions
+    data = split_blocked_contractions(data, False)
 
     return data
 

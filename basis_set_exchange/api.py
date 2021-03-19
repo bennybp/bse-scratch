@@ -232,6 +232,9 @@ def get_basis(name,
         basis_dict = manip.optimize_general(basis_dict, False)
         needs_pruning = True
 
+    # Split any blocked contractions
+    basis_dict = manip.split_blocked_contractions(basis_dict, False)
+
     # uncontract_segmented implies uncontract_general
     if uncontract_segmented:
         basis_dict = manip.uncontract_segmented(basis_dict, False)

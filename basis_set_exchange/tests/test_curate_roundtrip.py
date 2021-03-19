@@ -36,8 +36,10 @@ def test_curate_roundtrip(tmp_path, basis, fmt):
         uncontract_spdf = 0
 
     bse_formatted = api.get_basis(basis, fmt=fmt)
-    bse_dict = api.get_basis(basis, uncontract_general=uncontract_general, make_general=make_general)
-    bse_dict = manip.uncontract_spdf(bse_dict, uncontract_spdf)
+    bse_dict = api.get_basis(basis,
+                             uncontract_general=uncontract_general,
+                             make_general=make_general,
+                             uncontract_spdf=uncontract_spdf)
 
     outfile_path = os.path.join(tmp_path, 'roundtrip.txt')
     with open(outfile_path, 'w', encoding='utf-8') as outfile:

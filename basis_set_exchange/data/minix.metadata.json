@@ -1,0 +1,14 @@
+{
+  "molssi_bse_schema": {
+    "schema_type": "metadata",
+    "schema_version": "0.1"
+  },
+  "names": [
+    "MINIX"
+  ],
+  "tags": [],
+  "family": "jensen",
+  "description": "Small basis set used in HF-3c method",
+  "role": "orbital",
+  "auxiliaries": {}
+}

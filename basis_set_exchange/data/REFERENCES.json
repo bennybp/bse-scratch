@@ -4692,6 +4692,19 @@
     "year": "2002",
     "doi": "10.1002/jcc.10037"
   },
+  "sure2013a": {
+    "_entry_type" : "article",
+    "authors": [
+      "Sure, Rebecca",
+      "Grimme, Stefan"
+    ],
+    "title": "Corrected small basis set Hartree‐Fock method for large systems",
+    "journal": "J. Comput. Chem.",
+    "volume": "34",
+    "pages": "1672-1685",
+    "year": "2013",
+    "doi": "10.1002/jcc.23317"
+  },
   "swart2010a": {
     "_entry_type": "article",
     "authors": [

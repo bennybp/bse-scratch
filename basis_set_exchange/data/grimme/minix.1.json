@@ -1,0 +1,1464 @@
+{
+  "molssi_bse_schema": {
+    "schema_type": "component",
+    "schema_version": "0.1"
+  },
+  "description": "Small basis set used in HF-3c method",
+  "data_source": "Data by email from Stefan Grimme",
+  "elements": {
+    "1": {
+      "references": [
+        "Sure2013a"
+      ],
+      "electron_shells": [
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            0
+          ],
+          "exponents": [
+            "7.0340630000",
+            "1.0647560000",
+            "0.23655900000"
+          ],
+          "coefficients": [
+            [
+              "0.70452000000E-01",
+              "0.40782600000",
+              "0.64775200000"
+            ]
+          ]
+        }
+      ]
+    },
+    "2": {
+      "references": [
+        "Sure2013a"
+      ],
+      "electron_shells": [
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            0
+          ],
+          "exponents": [
+            "13.626736000",
+            "1.9993490000",
+            "0.38299300000"
+          ],
+          "coefficients": [
+            [
+              "0.80241000000E-01",
+              "0.40914300000",
+              "0.65727800000"
+            ]
+          ]
+        }
+      ]
+    },
+    "3": {
+      "references": [
+        "Sure2013a"
+      ],
+      "electron_shells": [
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            0
+          ],
+          "exponents": [
+            "35.046150000",
+            "5.2016900000",
+            "1.0562400000"
+          ],
+          "coefficients": [
+            [
+              "0.73760000000E-01",
+              "0.39747100000",
+              "0.66509200000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            0
+          ],
+          "exponents": [
+            "0.85125300000",
+            "0.83951000000E-01",
+            "0.32554000000E-01"
+          ],
+          "coefficients": [
+            [
+              "-0.93970000000E-01",
+              "0.57010000000",
+              "0.49975000000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            1
+          ],
+          "exponents": [
+            "0.10000000000"
+          ],
+          "coefficients": [
+            [
+              "1.0000000000"
+            ]
+          ]
+        }
+      ]
+    },
+    "4": {
+      "references": [
+        "Sure2013a"
+      ],
+      "electron_shells": [
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            0
+          ],
+          "exponents": [
+            "66.953540000",
+            "9.9392900000",
+            "2.0571300000"
+          ],
+          "coefficients": [
+            [
+              "0.70200000000E-01",
+              "0.39191000000",
+              "0.66997000000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            0
+          ],
+          "exponents": [
+            "2.3348560000",
+            "0.19697600000",
+            "0.67449000000E-01"
+          ],
+          "coefficients": [
+            [
+              "-0.82820000000E-01",
+              "0.55755300000",
+              "0.51604300000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            1
+          ],
+          "exponents": [
+            "0.25000000000"
+          ],
+          "coefficients": [
+            [
+              "1.0000000000"
+            ]
+          ]
+        }
+      ]
+    },
+    "5": {
+      "references": [
+        "Sure2013a"
+      ],
+      "electron_shells": [
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            0
+          ],
+          "exponents": [
+            "108.43704000",
+            "16.120560000",
+            "3.3734300000"
+          ],
+          "coefficients": [
+            [
+              "0.68651000000E-01",
+              "0.38993300000",
+              "0.67139500000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            0
+          ],
+          "exponents": [
+            "4.4578540000",
+            "0.36931500000",
+            "0.12255500000"
+          ],
+          "coefficients": [
+            [
+              "-0.82419000000E-01",
+              "0.55906400000",
+              "0.51679500000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            1
+          ],
+          "exponents": [
+            "3.2148920000",
+            "0.64613600000",
+            "0.15391600000"
+          ],
+          "coefficients": [
+            [
+              "0.10590000000",
+              "0.45718000000",
+              "0.63186100000"
+            ]
+          ]
+        }
+      ]
+    },
+    "6": {
+      "references": [
+        "Sure2013a"
+      ],
+      "electron_shells": [
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            0
+          ],
+          "exponents": [
+            "153.17226000",
+            "23.073030000",
+            "4.9232900000"
+          ],
+          "coefficients": [
+            [
+              "0.70740000000E-01",
+              "0.39538000000",
+              "0.66331100000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            0
+          ],
+          "exponents": [
+            "6.6166120000",
+            "0.52585600000",
+            "0.16995800000"
+          ],
+          "coefficients": [
+            [
+              "-0.81380000000E-01",
+              "0.57485300000",
+              "0.50241300000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            1
+          ],
+          "exponents": [
+            "4.9129200000",
+            "0.99761600000",
+            "0.23268500000"
+          ],
+          "coefficients": [
+            [
+              "0.10993100000",
+              "0.46271300000",
+              "0.62751400000"
+            ]
+          ]
+        }
+      ]
+    },
+    "7": {
+      "references": [
+        "Sure2013a"
+      ],
+      "electron_shells": [
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            0
+          ],
+          "exponents": [
+            "218.36449000",
+            "32.598890000",
+            "6.9173900000"
+          ],
+          "coefficients": [
+            [
+              "0.67870000000E-01",
+              "0.39020200000",
+              "0.67008300000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            0
+          ],
+          "exponents": [
+            "8.9194260000",
+            "0.70614100000",
+            "0.22505400000"
+          ],
+          "coefficients": [
+            [
+              "-0.80890000000E-01",
+              "0.56720200000",
+              "0.51109200000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            1
+          ],
+          "exponents": [
+            "6.5562720000",
+            "1.3490790000",
+            "0.31220900000"
+          ],
+          "coefficients": [
+            [
+              "0.11591900000",
+              "0.46995800000",
+              "0.61844800000"
+            ]
+          ]
+        }
+      ]
+    },
+    "8": {
+      "references": [
+        "Sure2013a"
+      ],
+      "electron_shells": [
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            0
+          ],
+          "exponents": [
+            "281.86658000",
+            "42.416000000",
+            "9.0956200000"
+          ],
+          "coefficients": [
+            [
+              "0.69060000000E-01",
+              "0.39315900000",
+              "0.66566900000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            0
+          ],
+          "exponents": [
+            "11.789326000",
+            "0.91289400000",
+            "0.28666100000"
+          ],
+          "coefficients": [
+            [
+              "-0.80820000000E-01",
+              "0.58209000000",
+              "0.49716000000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            1
+          ],
+          "exponents": [
+            "8.2741400000",
+            "1.7154630000",
+            "0.38301300000"
+          ],
+          "coefficients": [
+            [
+              "0.12427100000",
+              "0.47659400000",
+              "0.61304400000"
+            ]
+          ]
+        }
+      ]
+    },
+    "9": {
+      "references": [
+        "Sure2013a"
+      ],
+      "electron_shells": [
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            0
+          ],
+          "exponents": [
+            "368.37112000",
+            "55.061060000",
+            "11.747670000"
+          ],
+          "coefficients": [
+            [
+              "0.67040000000E-01",
+              "0.38924900000",
+              "0.67078800000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            0
+          ],
+          "exponents": [
+            "15.364708000",
+            "1.1675460000",
+            "0.36314100000"
+          ],
+          "coefficients": [
+            [
+              "-0.80550000000E-01",
+              "0.58772900000",
+              "0.49197900000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            1
+          ],
+          "exponents": [
+            "10.725667000",
+            "2.2258170000",
+            "0.48610500000"
+          ],
+          "coefficients": [
+            [
+              "0.12627000000",
+              "0.47794800000",
+              "0.61400800000"
+            ]
+          ]
+        }
+      ]
+    },
+    "10": {
+      "references": [
+        "Sure2013a"
+      ],
+      "electron_shells": [
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            0
+          ],
+          "exponents": [
+            "456.95285000",
+            "68.365430000",
+            "14.619760000"
+          ],
+          "coefficients": [
+            [
+              "0.66910000000E-01",
+              "0.38934900000",
+              "0.67051800000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            0
+          ],
+          "exponents": [
+            "19.327190000",
+            "1.4418200000",
+            "0.44408000000"
+          ],
+          "coefficients": [
+            [
+              "-0.80250000000E-01",
+              "0.59529800000",
+              "0.48486800000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            1
+          ],
+          "exponents": [
+            "13.352520000",
+            "2.7794700000",
+            "0.60097000000"
+          ],
+          "coefficients": [
+            [
+              "0.12884000000",
+              "0.48044100000",
+              "0.61167200000"
+            ]
+          ]
+        }
+      ]
+    },
+    "11": {
+      "references": [
+        "Sure2013a"
+      ],
+      "electron_shells": [
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            0
+          ],
+          "exponents": [
+            "542.76053000",
+            "81.959470000",
+            "17.723770000"
+          ],
+          "coefficients": [
+            [
+              "0.68410000000E-01",
+              "0.39209200000",
+              "0.66608400000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            0
+          ],
+          "exponents": [
+            "23.280420000",
+            "1.8683400000",
+            "0.62325000000"
+          ],
+          "coefficients": [
+            [
+              "-0.83801000000E-01",
+              "0.58279400000",
+              "0.49247400000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            0
+          ],
+          "exponents": [
+            "0.61761100000",
+            "0.65219000000E-01",
+            "0.25351000000E-01"
+          ],
+          "coefficients": [
+            [
+              "-0.11576200000",
+              "0.69586300000",
+              "0.38104700000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            1
+          ],
+          "exponents": [
+            "17.836360000",
+            "3.7956900000",
+            "0.87751000000"
+          ],
+          "coefficients": [
+            [
+              "0.12571000000",
+              "0.48046100000",
+              "0.60228100000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            1
+          ],
+          "exponents": [
+            "0.50000000000E-01"
+          ],
+          "coefficients": [
+            [
+              "1.0000000000"
+            ]
+          ]
+        }
+      ]
+    },
+    "12": {
+      "references": [
+        "Sure2013a"
+      ],
+      "electron_shells": [
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            0
+          ],
+          "exponents": [
+            "650.64336700",
+            "98.370780000",
+            "21.322490000"
+          ],
+          "coefficients": [
+            [
+              "0.68030000000E-01",
+              "0.39073800000",
+              "0.66726700000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            0
+          ],
+          "exponents": [
+            "27.977380000",
+            "2.3265200000",
+            "0.81808000000"
+          ],
+          "coefficients": [
+            [
+              "-0.86720000000E-01",
+              "0.58569700000",
+              "0.48649700000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            0
+          ],
+          "exponents": [
+            "1.0847510000",
+            "0.11831400000",
+            "0.43124000000E-01"
+          ],
+          "coefficients": [
+            [
+              "-0.12765100000",
+              "0.65077300000",
+              "0.43627200000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            1
+          ],
+          "exponents": [
+            "23.216620000",
+            "5.0022200000",
+            "1.2046500000"
+          ],
+          "coefficients": [
+            [
+              "0.12146000000",
+              "0.47929100000",
+              "0.59894200000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            1
+          ],
+          "exponents": [
+            "0.20000000000"
+          ],
+          "coefficients": [
+            [
+              "1.0000000000"
+            ]
+          ]
+        }
+      ]
+    },
+    "13": {
+      "references": [
+        "Sure2013a"
+      ],
+      "electron_shells": [
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            0
+          ],
+          "exponents": [
+            "777.44334000",
+            "117.23153000",
+            "25.376297000"
+          ],
+          "coefficients": [
+            [
+              "0.66887000000E-01",
+              "0.38776800000",
+              "0.67070300000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            0
+          ],
+          "exponents": [
+            "33.356253000",
+            "2.8013150000",
+            "1.0227330000"
+          ],
+          "coefficients": [
+            [
+              "-0.88956000000E-01",
+              "0.60106100000",
+              "0.46878600000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            0
+          ],
+          "exponents": [
+            "1.6852460000",
+            "0.20496900000",
+            "0.74790000000E-01"
+          ],
+          "coefficients": [
+            [
+              "-0.15138900000",
+              "0.65938600000",
+              "0.43869300000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            1
+          ],
+          "exponents": [
+            "30.569580000",
+            "6.6447010000",
+            "1.6543950000"
+          ],
+          "coefficients": [
+            [
+              "0.11235300000",
+              "0.46746700000",
+              "0.60978200000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            1
+          ],
+          "exponents": [
+            "0.56613000000E-01",
+            "0.37992000000",
+            "0.14688100000"
+          ],
+          "coefficients": [
+            [
+              "0.39647000000",
+              "0.22643300000",
+              "0.50058600000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto_spherical",
+          "region": "",
+          "angular_momentum": [
+            2
+          ],
+          "exponents": [
+            "0.30000000000"
+          ],
+          "coefficients": [
+            [
+              "1.0000000000"
+            ]
+          ]
+        }
+      ]
+    },
+    "14": {
+      "references": [
+        "Sure2013a"
+      ],
+      "electron_shells": [
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            0
+          ],
+          "exponents": [
+            "909.23487000",
+            "137.12456000",
+            "29.714810000"
+          ],
+          "coefficients": [
+            [
+              "0.66405000000E-01",
+              "0.38622200000",
+              "0.67224000000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            0
+          ],
+          "exponents": [
+            "39.129423000",
+            "3.3359810000",
+            "1.2512590000"
+          ],
+          "coefficients": [
+            [
+              "-0.90999000000E-01",
+              "0.61161500000",
+              "0.45686000000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            0
+          ],
+          "exponents": [
+            "2.1976490000",
+            "0.27592700000",
+            "0.10042500000"
+          ],
+          "coefficients": [
+            [
+              "-0.16873300000",
+              "0.67545300000",
+              "0.42941900000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            1
+          ],
+          "exponents": [
+            "37.881761000",
+            "8.3045980000",
+            "2.1207920000"
+          ],
+          "coefficients": [
+            [
+              "0.10875300000",
+              "0.46351500000",
+              "0.61133400000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            1
+          ],
+          "exponents": [
+            "0.54578900000",
+            "0.76007000000E-01",
+            "0.20822000000"
+          ],
+          "coefficients": [
+            [
+              "0.23891300000",
+              "0.34545300000",
+              "0.54229500000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto_spherical",
+          "region": "",
+          "angular_momentum": [
+            2
+          ],
+          "exponents": [
+            "0.35000000000"
+          ],
+          "coefficients": [
+            [
+              "1.0000000000"
+            ]
+          ]
+        }
+      ]
+    },
+    "15": {
+      "references": [
+        "Sure2013a"
+      ],
+      "electron_shells": [
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            0
+          ],
+          "exponents": [
+            "1053.2658000",
+            "158.79044000",
+            "34.424407000"
+          ],
+          "coefficients": [
+            [
+              "0.65865000000E-01",
+              "0.38457800000",
+              "0.67396300000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            0
+          ],
+          "exponents": [
+            "45.450377000",
+            "3.8999260000",
+            "1.4885070000"
+          ],
+          "coefficients": [
+            [
+              "-0.92655000000E-01",
+              "0.62651300000",
+              "0.44103900000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            0
+          ],
+          "exponents": [
+            "2.4694830000",
+            "0.32087200000",
+            "0.11683200000"
+          ],
+          "coefficients": [
+            [
+              "-0.18054900000",
+              "0.68095200000",
+              "0.42914200000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            1
+          ],
+          "exponents": [
+            "46.100019000",
+            "10.165057000",
+            "2.6447940000"
+          ],
+          "coefficients": [
+            [
+              "0.10538800000",
+              "0.45971200000",
+              "0.61371400000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            1
+          ],
+          "exponents": [
+            "0.67905900000",
+            "0.25782600000",
+            "0.92783000000E-01"
+          ],
+          "coefficients": [
+            [
+              "0.23588500000",
+              "0.55416000000",
+              "0.33653000000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto_spherical",
+          "region": "",
+          "angular_momentum": [
+            2
+          ],
+          "exponents": [
+            "0.45000000000"
+          ],
+          "coefficients": [
+            [
+              "1.0000000000"
+            ]
+          ]
+        }
+      ]
+    },
+    "16": {
+      "references": [
+        "Sure2013a"
+      ],
+      "electron_shells": [
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            0
+          ],
+          "exponents": [
+            "1201.4584000",
+            "181.39212000",
+            "39.404795000"
+          ],
+          "coefficients": [
+            [
+              "0.65765000000E-01",
+              "0.38394800000",
+              "0.67437200000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            0
+          ],
+          "exponents": [
+            "52.139030000",
+            "4.5287990000",
+            "1.7549380000"
+          ],
+          "coefficients": [
+            [
+              "-0.94232000000E-01",
+              "0.63546800000",
+              "0.43150600000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            0
+          ],
+          "exponents": [
+            "2.9205260000",
+            "0.39218700000",
+            "0.14269900000"
+          ],
+          "coefficients": [
+            [
+              "0.19004200000",
+              "-0.68552700000",
+              "-0.42927200000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            1
+          ],
+          "exponents": [
+            "54.644071000",
+            "12.122902000",
+            "3.2065040000"
+          ],
+          "coefficients": [
+            [
+              "0.10367300000",
+              "0.45819000000",
+              "0.61340000000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            1
+          ],
+          "exponents": [
+            "0.88761500000",
+            "0.11174300000",
+            "0.32710000000"
+          ],
+          "coefficients": [
+            [
+              "0.22943600000",
+              "0.35370000000",
+              "0.55296000000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto_spherical",
+          "region": "",
+          "angular_momentum": [
+            2
+          ],
+          "exponents": [
+            "0.55000000000"
+          ],
+          "coefficients": [
+            [
+              "1.0000000000"
+            ]
+          ]
+        }
+      ]
+    },
+    "17": {
+      "references": [
+        "Sure2013a"
+      ],
+      "electron_shells": [
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            0
+          ],
+          "exponents": [
+            "1362.0220000",
+            "205.81110000",
+            "44.772167000"
+          ],
+          "coefficients": [
+            [
+              "0.65544000000E-01",
+              "0.38298700000",
+              "0.67521000000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            0
+          ],
+          "exponents": [
+            "59.225732000",
+            "5.2139020000",
+            "2.0473460000"
+          ],
+          "coefficients": [
+            [
+              "-0.95620000000E-01",
+              "0.64142600000",
+              "0.42515300000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            0
+          ],
+          "exponents": [
+            "3.4471240000",
+            "0.47378500000",
+            "0.17132100000"
+          ],
+          "coefficients": [
+            [
+              "0.19640100000",
+              "-0.69236000000",
+              "-0.42619300000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            1
+          ],
+          "exponents": [
+            "64.099958000",
+            "14.287139000",
+            "3.8281350000"
+          ],
+          "coefficients": [
+            [
+              "0.10178900000",
+              "0.45610700000",
+              "0.61428200000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            1
+          ],
+          "exponents": [
+            "1.1039040000",
+            "0.13323600000",
+            "0.39917800000"
+          ],
+          "coefficients": [
+            [
+              "0.23590300000",
+              "0.34660000000",
+              "0.55806600000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto_spherical",
+          "region": "",
+          "angular_momentum": [
+            2
+          ],
+          "exponents": [
+            "0.65000000000"
+          ],
+          "coefficients": [
+            [
+              "1.0000000000"
+            ]
+          ]
+        }
+      ]
+    },
+    "18": {
+      "references": [
+        "Sure2013a"
+      ],
+      "electron_shells": [
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            0
+          ],
+          "exponents": [
+            "1536.9325000",
+            "232.17765000",
+            "50.521685000"
+          ],
+          "coefficients": [
+            [
+              "0.65159000000E-01",
+              "0.38180700000",
+              "0.67644600000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            0
+          ],
+          "exponents": [
+            "66.933949000",
+            "5.9185520000",
+            "2.3393420000"
+          ],
+          "coefficients": [
+            [
+              "-0.96740000000E-01",
+              "0.65274900000",
+              "0.41357300000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            0
+          ],
+          "exponents": [
+            "4.0453070000",
+            "0.56570100000",
+            "0.20406500000"
+          ],
+          "coefficients": [
+            [
+              "0.20073600000",
+              "-0.69626800000",
+              "-0.42484300000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            1
+          ],
+          "exponents": [
+            "74.352915000",
+            "16.631346000",
+            "4.5039270000"
+          ],
+          "coefficients": [
+            [
+              "0.10007900000",
+              "0.45422600000",
+              "0.61525900000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto",
+          "region": "",
+          "angular_momentum": [
+            1
+          ],
+          "exponents": [
+            "1.3570910000",
+            "0.48811300000",
+            "0.16212600000"
+          ],
+          "coefficients": [
+            [
+              "0.23727600000",
+              "0.55836000000",
+              "0.34616500000"
+            ]
+          ]
+        },
+        {
+          "function_type": "gto_spherical",
+          "region": "",
+          "angular_momentum": [
+            2
+          ],
+          "exponents": [
+            "0.69600000000"
+          ],
+          "coefficients": [
+            [
+              "1.0000000000"
+            ]
+          ]
+        }
+      ]
+    }
+  }
+}

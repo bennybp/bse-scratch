@@ -4706,6 +4706,20 @@
     "year": "1982",
     "doi": "10.1016/0009-2614(82)83728-7"
   },
+  "tanaka2013a": {
+    "_entry_type": "article",
+    "authors": [
+      "Tanaka, Masato",
+      "Katouda, Michio",
+      "Nagase, Shigeru"
+    ],
+    "title": "Optimization of RI-MP2 Auxiliary Basis Functions for 6-31G** and 6-311G** Basis Sets for First-, Second-, and Third-Row Elements",
+    "journal": "J. Comput. Chem.",
+    "volume": "34",
+    "pages": "2568-2575",
+    "year": "2013",
+    "doi": "10.1002/jcc.23430"
+  },
   "tatewaki1996a": {
     "_entry_type": "article",
     "authors": [

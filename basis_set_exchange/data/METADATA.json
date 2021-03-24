@@ -2024,6 +2024,49 @@
       }
     }
   },
+  "6-311g_st__st_-rifit": {
+    "display_name": "6-311G**-RIFIT",
+    "other_names": [],
+    "description": "RI-MP2 auxiliary basis for 6-311G** basis",
+    "latest_version": "1",
+    "tags": [],
+    "basename": "6-311GSS-RIFIT",
+    "relpath": "",
+    "family": "pople_fit",
+    "role": "rifit",
+    "function_types": [
+      "gto",
+      "gto_spherical"
+    ],
+    "auxiliaries": {},
+    "versions": {
+      "1": {
+        "file_relpath": "6-311GSS-RIFIT.1.table.json",
+        "revdesc": "Data from supporting information",
+        "revdate": "2021-03-24",
+        "elements": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18"
+        ]
+      }
+    }
+  },
   "6-311xxg(d,p)": {
     "display_name": "6-311xxG(d,p)",
     "other_names": [],
@@ -2633,6 +2676,49 @@
           "34",
           "35",
           "36"
+        ]
+      }
+    }
+  },
+  "6-31g_st__st_-rifit": {
+    "display_name": "6-31G**-RIFIT",
+    "other_names": [],
+    "description": "RI-MP2 auxiliary basis for 6-31G** basis",
+    "latest_version": "1",
+    "tags": [],
+    "basename": "6-31GSS-RIFIT",
+    "relpath": "",
+    "family": "pople_fit",
+    "role": "rifit",
+    "function_types": [
+      "gto",
+      "gto_cartesian"
+    ],
+    "auxiliaries": {},
+    "versions": {
+      "1": {
+        "file_relpath": "6-31GSS-RIFIT.1.table.json",
+        "revdesc": "Data from supporting information",
+        "revdate": "2021-03-24",
+        "elements": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18"
         ]
       }
     }

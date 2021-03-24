@@ -1,0 +1,28 @@
+{
+  "molssi_bse_schema": {
+    "schema_type": "table",
+    "schema_version": "0.1"
+  },
+  "revision_description": "Data from supporting information",
+  "revision_date": "2021-03-24",
+  "elements": {
+    "1": "pople/6-31GSS-RIFIT.1.element.json",
+    "2": "pople/6-31GSS-RIFIT.1.element.json",
+    "3": "pople/6-31GSS-RIFIT.1.element.json",
+    "4": "pople/6-31GSS-RIFIT.1.element.json",
+    "5": "pople/6-31GSS-RIFIT.1.element.json",
+    "6": "pople/6-31GSS-RIFIT.1.element.json",
+    "7": "pople/6-31GSS-RIFIT.1.element.json",
+    "8": "pople/6-31GSS-RIFIT.1.element.json",
+    "9": "pople/6-31GSS-RIFIT.1.element.json",
+    "10": "pople/6-31GSS-RIFIT.1.element.json",
+    "11": "pople/6-31GSS-RIFIT.1.element.json",
+    "12": "pople/6-31GSS-RIFIT.1.element.json",
+    "13": "pople/6-31GSS-RIFIT.1.element.json",
+    "14": "pople/6-31GSS-RIFIT.1.element.json",
+    "15": "pople/6-31GSS-RIFIT.1.element.json",
+    "16": "pople/6-31GSS-RIFIT.1.element.json",
+    "17": "pople/6-31GSS-RIFIT.1.element.json",
+    "18": "pople/6-31GSS-RIFIT.1.element.json"
+  }
+}

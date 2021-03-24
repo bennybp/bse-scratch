@@ -11,5 +11,7 @@
   "family": "pople",
   "description": "6-31G + polarization on all atoms",
   "role": "orbital",
-  "auxiliaries": {}
+  "auxiliaries": {
+    "rifit" : "6-31G**-RIFIT"
+  }
 }

@@ -1,0 +1,14 @@
+{
+  "molssi_bse_schema": {
+    "schema_type": "metadata",
+    "schema_version": "0.1"
+  },
+  "names": [
+    "6-31G**-RIFIT"
+  ],
+  "tags": [],
+  "family": "pople_fit",
+  "description": "RI-MP2 auxiliary basis for 6-31G** basis",
+  "role": "rifit",
+  "auxiliaries": {}
+}

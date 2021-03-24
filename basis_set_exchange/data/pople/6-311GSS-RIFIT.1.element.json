@@ -1,0 +1,100 @@
+{
+  "molssi_bse_schema": {
+    "schema_type": "element",
+    "schema_version": "0.1"
+  },
+  "name": "6-311G**-RIFIT",
+  "description": "RI-MP2 auxiliary basis for 6-311G** basis",
+  "elements": {
+    "1": {
+      "components": [
+        "pople/6-311GSS-RIFIT.1.json"
+      ]
+    },
+    "2": {
+      "components": [
+        "pople/6-311GSS-RIFIT.1.json"
+      ]
+    },
+    "3": {
+      "components": [
+        "pople/6-311GSS-RIFIT.1.json"
+      ]
+    },
+    "4": {
+      "components": [
+        "pople/6-311GSS-RIFIT.1.json"
+      ]
+    },
+    "5": {
+      "components": [
+        "pople/6-311GSS-RIFIT.1.json"
+      ]
+    },
+    "6": {
+      "components": [
+        "pople/6-311GSS-RIFIT.1.json"
+      ]
+    },
+    "7": {
+      "components": [
+        "pople/6-311GSS-RIFIT.1.json"
+      ]
+    },
+    "8": {
+      "components": [
+        "pople/6-311GSS-RIFIT.1.json"
+      ]
+    },
+    "9": {
+      "components": [
+        "pople/6-311GSS-RIFIT.1.json"
+      ]
+    },
+    "10": {
+      "components": [
+        "pople/6-311GSS-RIFIT.1.json"
+      ]
+    },
+    "11": {
+      "components": [
+        "pople/6-311GSS-RIFIT.1.json"
+      ]
+    },
+    "12": {
+      "components": [
+        "pople/6-311GSS-RIFIT.1.json"
+      ]
+    },
+    "13": {
+      "components": [
+        "pople/6-311GSS-RIFIT.1.json"
+      ]
+    },
+    "14": {
+      "components": [
+        "pople/6-311GSS-RIFIT.1.json"
+      ]
+    },
+    "15": {
+      "components": [
+        "pople/6-311GSS-RIFIT.1.json"
+      ]
+    },
+    "16": {
+      "components": [
+        "pople/6-311GSS-RIFIT.1.json"
+      ]
+    },
+    "17": {
+      "components": [
+        "pople/6-311GSS-RIFIT.1.json"
+      ]
+    },
+    "18": {
+      "components": [
+        "pople/6-311GSS-RIFIT.1.json"
+      ]
+    }
+  }
+}

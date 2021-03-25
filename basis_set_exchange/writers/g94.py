@@ -5,7 +5,7 @@ Conversion of basis sets to Gaussian format
 from .. import lut, manip, sort, printing
 
 
-def _write_g94_common(basis, add_harm_type, psi4_am):
+def _write_g94_common(basis, add_harm_type, psi4_am, system_library):
     '''Converts a basis set to Gaussian format
     '''
 
@@ -27,7 +27,7 @@ def _write_g94_common(basis, add_harm_type, psi4_am):
             data = basis['elements'][z]
 
             sym = lut.element_sym_from_Z(z, True)
-            s += '{}     0\n'.format(sym)
+            s += '{}{}     0\n'.format('-' if system_library else '', sym)
 
             for shell in data['electron_shells']:
                 exponents = shell['exponents']
@@ -93,7 +93,13 @@ def _write_g94_common(basis, add_harm_type, psi4_am):
 def write_g94(basis):
     '''Converts a basis set to Gaussian format
     '''
-    return _write_g94_common(basis, False, False)
+    return _write_g94_common(basis, False, False, False)
+
+
+def write_g94lib(basis):
+    '''Converts a basis set to Gaussian system library format
+    '''
+    return _write_g94_common(basis, False, False, True)
 
 
 def write_xtron(basis):
@@ -102,7 +108,7 @@ def write_xtron(basis):
     xTron uses a modified gaussian format that puts 'c' on the same
     line as the angular momentum if the shell is cartesian.
     '''
-    return _write_g94_common(basis, True, False)
+    return _write_g94_common(basis, True, False, False)
 
 
 def write_psi4(basis):
@@ -117,5 +123,5 @@ def write_psi4(basis):
     '''
 
     s = '****\n'
-    s += _write_g94_common(basis, False, True)
+    s += _write_g94_common(basis, False, True, False)
     return s

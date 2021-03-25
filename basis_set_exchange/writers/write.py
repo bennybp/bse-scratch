@@ -5,7 +5,7 @@ Converts basis set data to a specified output format
 import bz2
 from .bsejson import write_json
 from .nwchem import write_nwchem
-from .g94 import write_g94, write_xtron, write_psi4
+from .g94 import write_g94, write_g94lib, write_xtron, write_psi4
 from .gamess_us import write_gamess_us
 from .gamess_uk import write_gamess_uk
 from .qchem import write_qchem
@@ -36,6 +36,13 @@ _writer_map = {
         'comment': '!',
         'valid': set(['gto', 'gto_cartesian', 'gto_spherical', 'scalar_ecp']),
         'function': write_g94
+    },
+    'gaussian94lib': {
+        'display': 'Gaussian, system library',
+        'extension': '.gbs',
+        'comment': '!',
+        'valid': set(['gto', 'gto_cartesian', 'gto_spherical', 'scalar_ecp']),
+        'function': write_g94lib
     },
     'psi4': {
         'display': 'Psi4',

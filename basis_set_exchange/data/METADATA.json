@@ -10821,6 +10821,126 @@
       }
     }
   },
+  "aug-ccx-5z": {
+    "display_name": "aug-ccX-5Z",
+    "other_names": [],
+    "description": "Augmented basis set for calculation of core excitations by the correlated wave function linear response and equation-of-motion methods",
+    "latest_version": "1",
+    "tags": [],
+    "basename": "aug-ccX-5Z",
+    "relpath": "",
+    "family": "jensen",
+    "role": "orbital",
+    "function_types": [
+      "gto",
+      "gto_spherical"
+    ],
+    "auxiliaries": {},
+    "versions": {
+      "1": {
+        "file_relpath": "aug-ccX-5Z.1.table.json",
+        "revdesc": "Data from Frank Jensen",
+        "revdate": "2021-05-03",
+        "elements": [
+          "5",
+          "6",
+          "7",
+          "8",
+          "9"
+        ]
+      }
+    }
+  },
+  "aug-ccx-dz": {
+    "display_name": "aug-ccX-DZ",
+    "other_names": [],
+    "description": "Augmented basis set for calculation of core excitations by the correlated wave function linear response and equation-of-motion methods",
+    "latest_version": "1",
+    "tags": [],
+    "basename": "aug-ccX-DZ",
+    "relpath": "",
+    "family": "jensen",
+    "role": "orbital",
+    "function_types": [
+      "gto",
+      "gto_spherical"
+    ],
+    "auxiliaries": {},
+    "versions": {
+      "1": {
+        "file_relpath": "aug-ccX-DZ.1.table.json",
+        "revdesc": "Data from Frank Jensen",
+        "revdate": "2021-05-03",
+        "elements": [
+          "5",
+          "6",
+          "7",
+          "8",
+          "9"
+        ]
+      }
+    }
+  },
+  "aug-ccx-qz": {
+    "display_name": "aug-ccX-QZ",
+    "other_names": [],
+    "description": "Augmented basis set for calculation of core excitations by the correlated wave function linear response and equation-of-motion methods",
+    "latest_version": "1",
+    "tags": [],
+    "basename": "aug-ccX-QZ",
+    "relpath": "",
+    "family": "jensen",
+    "role": "orbital",
+    "function_types": [
+      "gto",
+      "gto_spherical"
+    ],
+    "auxiliaries": {},
+    "versions": {
+      "1": {
+        "file_relpath": "aug-ccX-QZ.1.table.json",
+        "revdesc": "Data from Frank Jensen",
+        "revdate": "2021-05-03",
+        "elements": [
+          "5",
+          "6",
+          "7",
+          "8",
+          "9"
+        ]
+      }
+    }
+  },
+  "aug-ccx-tz": {
+    "display_name": "aug-ccX-TZ",
+    "other_names": [],
+    "description": "Augmented basis set for calculation of core excitations by the correlated wave function linear response and equation-of-motion methods",
+    "latest_version": "1",
+    "tags": [],
+    "basename": "aug-ccX-TZ",
+    "relpath": "",
+    "family": "jensen",
+    "role": "orbital",
+    "function_types": [
+      "gto",
+      "gto_spherical"
+    ],
+    "auxiliaries": {},
+    "versions": {
+      "1": {
+        "file_relpath": "aug-ccX-TZ.1.table.json",
+        "revdesc": "Data from Frank Jensen",
+        "revdate": "2021-05-03",
+        "elements": [
+          "5",
+          "6",
+          "7",
+          "8",
+          "9"
+        ]
+      }
+    }
+  },
   "aug-mcc-pv5z": {
     "display_name": "aug-mcc-pV5Z",
     "other_names": [],
@@ -20299,6 +20419,126 @@
           "8",
           "9",
           "10"
+        ]
+      }
+    }
+  },
+  "ccx-5z": {
+    "display_name": "ccX-5Z",
+    "other_names": [],
+    "description": "Basis set for calculation of core excitations by the correlated wave function linear response and equation-of-motion methods",
+    "latest_version": "1",
+    "tags": [],
+    "basename": "ccX-5Z",
+    "relpath": "",
+    "family": "jensen",
+    "role": "orbital",
+    "function_types": [
+      "gto",
+      "gto_spherical"
+    ],
+    "auxiliaries": {},
+    "versions": {
+      "1": {
+        "file_relpath": "ccX-5Z.1.table.json",
+        "revdesc": "Data from Frank Jensen",
+        "revdate": "2021-05-03",
+        "elements": [
+          "5",
+          "6",
+          "7",
+          "8",
+          "9"
+        ]
+      }
+    }
+  },
+  "ccx-dz": {
+    "display_name": "ccX-DZ",
+    "other_names": [],
+    "description": "Basis set for calculation of core excitations by the correlated wave function linear response and equation-of-motion methods",
+    "latest_version": "1",
+    "tags": [],
+    "basename": "ccX-DZ",
+    "relpath": "",
+    "family": "jensen",
+    "role": "orbital",
+    "function_types": [
+      "gto",
+      "gto_spherical"
+    ],
+    "auxiliaries": {},
+    "versions": {
+      "1": {
+        "file_relpath": "ccX-DZ.1.table.json",
+        "revdesc": "Data from Frank Jensen",
+        "revdate": "2021-05-03",
+        "elements": [
+          "5",
+          "6",
+          "7",
+          "8",
+          "9"
+        ]
+      }
+    }
+  },
+  "ccx-qz": {
+    "display_name": "ccX-QZ",
+    "other_names": [],
+    "description": "Basis set for calculation of core excitations by the correlated wave function linear response and equation-of-motion methods",
+    "latest_version": "1",
+    "tags": [],
+    "basename": "ccX-QZ",
+    "relpath": "",
+    "family": "jensen",
+    "role": "orbital",
+    "function_types": [
+      "gto",
+      "gto_spherical"
+    ],
+    "auxiliaries": {},
+    "versions": {
+      "1": {
+        "file_relpath": "ccX-QZ.1.table.json",
+        "revdesc": "Data from Frank Jensen",
+        "revdate": "2021-05-03",
+        "elements": [
+          "5",
+          "6",
+          "7",
+          "8",
+          "9"
+        ]
+      }
+    }
+  },
+  "ccx-tz": {
+    "display_name": "ccX-TZ",
+    "other_names": [],
+    "description": "Basis set for calculation of core excitations by the correlated wave function linear response and equation-of-motion methods",
+    "latest_version": "1",
+    "tags": [],
+    "basename": "ccX-TZ",
+    "relpath": "",
+    "family": "jensen",
+    "role": "orbital",
+    "function_types": [
+      "gto",
+      "gto_spherical"
+    ],
+    "auxiliaries": {},
+    "versions": {
+      "1": {
+        "file_relpath": "ccX-TZ.1.table.json",
+        "revdesc": "Data from Frank Jensen",
+        "revdate": "2021-05-03",
+        "elements": [
+          "5",
+          "6",
+          "7",
+          "8",
+          "9"
         ]
       }
     }

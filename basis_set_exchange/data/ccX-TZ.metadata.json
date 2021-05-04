@@ -1,0 +1,14 @@
+{
+  "molssi_bse_schema": {
+    "schema_type": "metadata",
+    "schema_version": "0.1"
+  },
+  "names": [
+    "ccX-TZ"
+  ],
+  "tags": [],
+  "family": "jensen",
+  "description": "Basis set for calculation of core excitations by the correlated wave function linear response and equation-of-motion methods",
+  "role": "orbital",
+  "auxiliaries": {}
+}

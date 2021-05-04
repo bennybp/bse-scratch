@@ -43,6 +43,20 @@
     "year": "2019",
     "doi": "10.1021/acs.jctc.8b01071"
   },
+  "ambroise2021a": {
+    "_entry_type": "article",
+    "authors": [
+      "Ambroise, Maximilien A.",
+      "Dreuw, Andreas",
+      "Jensen, Frank"
+    ],
+    "title": "Probing Basis Set Requirements for Calculating Core Ionization and Core Excitation Spectra Using Correlated Wave Function Methods",
+    "journal": "J. Chem. Theory Comput.",
+    "volume": "null",
+    "pages": "null",
+    "year": "2021",
+    "doi": "10.1021/acs.jctc.1c00042"
+  },
   "amerigo1995a": {
     "_entry_type": "article",
     "authors": [

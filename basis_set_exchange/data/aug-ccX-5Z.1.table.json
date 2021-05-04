@@ -1,0 +1,15 @@
+{
+  "molssi_bse_schema": {
+    "schema_type": "table",
+    "schema_version": "0.1"
+  },
+  "revision_description": "Data from Frank Jensen",
+  "revision_date": "2021-05-03",
+  "elements": {
+    "5": "jensen/aug-ccX-5Z.1.element.json",
+    "6": "jensen/aug-ccX-5Z.1.element.json",
+    "7": "jensen/aug-ccX-5Z.1.element.json",
+    "8": "jensen/aug-ccX-5Z.1.element.json",
+    "9": "jensen/aug-ccX-5Z.1.element.json"
+  }
+}

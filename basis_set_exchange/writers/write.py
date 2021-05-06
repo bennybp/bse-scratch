@@ -12,6 +12,7 @@ from .qchem import write_qchem
 from .orca import write_orca
 from .turbomole import write_turbomole
 from .molpro import write_molpro
+from .libmol import write_libmol
 from .molcas import write_molcas
 from .genbas import write_cfour, write_aces2
 from .dalton import write_dalton
@@ -127,6 +128,13 @@ _writer_map = {
         'comment': '!',
         'valid': set(['gto', 'gto_cartesian', 'gto_spherical', 'scalar_ecp']),
         'function': write_molpro
+    },
+    'libmol': {
+        'display': 'Molpro system library',
+        'extension': '.libmol',
+        'comment': '!',
+        'valid': set(['gto', 'gto_cartesian', 'gto_spherical', 'scalar_ecp']),
+        'function': write_libmol
     },
     'cfour': {
         'display': 'CFOUR',

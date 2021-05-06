@@ -32,11 +32,11 @@ if __name__ == "__main__":
         name='basis_set_exchange',
         version=versioneer.get_version(),
         cmdclass=versioneer.get_cmdclass(),
-        description='The Quantum Chemistry Basis Set Exchange',
+        description='The Basis Set Exchange',
         long_description=long_description,
         long_description_content_type='text/markdown',
         author='The Molecular Sciences Software Institute',
-        author_email='bpp4@vt.edu',
+        author_email='bpp4@vt.edu, slehtola@vt.edu',
         url="https://github.com/MolSSI-BSE/basis_set_exchange",
         license='BSD-3C',
         packages=my_packages,
@@ -47,6 +47,7 @@ if __name__ == "__main__":
         install_requires=[
             'jsonschema',
             'argcomplete',
+            'regex'
         ],
         extras_require={
             ':python_version == "3.6"': ["importlib-metadata < 3"],

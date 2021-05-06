@@ -30,7 +30,7 @@ jobs:
 
       - name: Install package
         run: |
-          pip install .[docs,tests,curate] codecov
+          pip install .[docs,tests,curate] codecov regex
           mkdir deps # For QCSchems
           mkdir test_wdir # Working directory to run tests from
                           # (testing installed BSE, not the source tree)

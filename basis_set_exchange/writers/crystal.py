@@ -1,5 +1,7 @@
 '''
 Conversion of basis sets to Crystal format
+
+Written by Susi Lehtola, 2020
 '''
 
 from .. import lut, manip, sort, printing

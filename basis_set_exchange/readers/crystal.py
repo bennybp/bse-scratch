@@ -1,3 +1,9 @@
+'''
+Crystal format parser
+
+Written by Susi Lehtola, 2020
+'''
+
 import re
 from .. import lut
 from . import helpers

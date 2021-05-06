@@ -2823,12 +2823,26 @@
       "Atashroo, T.",
       "Ermler, W. C."
     ],
-    "title": "Abinitiorelativistic effective potentials with spin-orbit operators. III. Rb through Xe",
+    "title": "Ab initio relativistic effective potentials with spin-orbit operators. III. Rb through Xe",
     "journal": "J. Chem. Phys.",
     "volume": "87",
     "pages": "2812-2824",
     "year": "1987",
     "doi": "10.1063/1.453069"
+  },
+  "laun2018a": {
+    "_entry_type": "article",
+    "authors": [
+      "Laun, Joachim",
+      "Oliveira, Daniel Vilela",
+      "Bredow, Thomas"
+    ],
+    "title": "Consistent gaussian basis sets of double‐ and triple‐zeta valence with polarization quality of the fifth period for solid‐state calculations",
+    "journal": "J. Comput. Chem.",
+    "volume": "39",
+    "pages": "1285-1290",
+    "year": "2018",
+    "doi": "10.1002/jcc.25195"
   },
   "lehtola2012a": {
     "_entry_type": "article",
@@ -3566,6 +3580,21 @@
     "year": "2019",
     "doi": "10.1007/s00894-019-3924-8"
   },
+  "oliveira2019b": {
+    "_entry_type": "article",
+    "authors": [
+      "Oliveira, Daniel Vilela",
+      "Laun, Joachim",
+      "Peintinger, Michael F.",
+      "Bredow, Thomas"
+    ],
+    "title": "BSSE‐correction scheme for consistent gaussian basis sets of double‐ and triple‐zeta valence with polarization quality for solid‐state calculations",
+    "journal": "J. Comput. Chem.",
+    "volume": "40",
+    "pages": "2364-2376",
+    "year": "2019",
+    "doi": "10.1002/jcc.26013"
+  },
   "ortiz1992a": {
     "_entry_type": "article",
     "authors": [
@@ -3771,6 +3800,20 @@
     "pages": "2360-2373",
     "year": "2016",
     "doi": "10.1002/jcc.24461"
+  },
+  "peintinger2013a": {
+    "_entry_type": "article",
+    "authors": [
+      "Peintinger, Michael F.",
+      "Oliveira, Daniel Vilela",
+      "Bredow, Thomas"
+    ],
+    "title": "Consistent Gaussian basis sets of triple‐zeta valence with polarization quality for solid‐state calculations",
+    "journal": "J. Comput. Chem.",
+    "volume": "34",
+    "pages": "451-459",
+    "year": "2013",
+    "doi": "10.1002/jcc.23153"
   },
   "peterson1994a": {
     "_entry_type": "article",

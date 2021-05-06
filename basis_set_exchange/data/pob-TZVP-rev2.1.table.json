@@ -1,0 +1,42 @@
+{
+  "molssi_bse_schema": {
+    "schema_type": "table",
+    "schema_version": "0.1"
+  },
+  "revision_description": "Data from Bredow's web site",
+  "revision_date": "2020-11-04",
+  "elements": {
+    "1": "pob/pob-TZVP-rev2.1.element.json",
+    "3": "pob/pob-TZVP-rev2.1.element.json",
+    "4": "pob/pob-TZVP-rev2.1.element.json",
+    "5": "pob/pob-TZVP-rev2.1.element.json",
+    "6": "pob/pob-TZVP-rev2.1.element.json",
+    "7": "pob/pob-TZVP-rev2.1.element.json",
+    "8": "pob/pob-TZVP-rev2.1.element.json",
+    "9": "pob/pob-TZVP-rev2.1.element.json",
+    "11": "pob/pob-TZVP-rev2.1.element.json",
+    "12": "pob/pob-TZVP-rev2.1.element.json",
+    "13": "pob/pob-TZVP-rev2.1.element.json",
+    "14": "pob/pob-TZVP-rev2.1.element.json",
+    "15": "pob/pob-TZVP-rev2.1.element.json",
+    "16": "pob/pob-TZVP-rev2.1.element.json",
+    "17": "pob/pob-TZVP-rev2.1.element.json",
+    "19": "pob/pob-TZVP-rev2.1.element.json",
+    "20": "pob/pob-TZVP-rev2.1.element.json",
+    "21": "pob/pob-TZVP-rev2.1.element.json",
+    "22": "pob/pob-TZVP-rev2.1.element.json",
+    "23": "pob/pob-TZVP-rev2.1.element.json",
+    "24": "pob/pob-TZVP-rev2.1.element.json",
+    "25": "pob/pob-TZVP-rev2.1.element.json",
+    "26": "pob/pob-TZVP-rev2.1.element.json",
+    "27": "pob/pob-TZVP-rev2.1.element.json",
+    "28": "pob/pob-TZVP-rev2.1.element.json",
+    "29": "pob/pob-TZVP-rev2.1.element.json",
+    "30": "pob/pob-TZVP-rev2.1.element.json",
+    "31": "pob/pob-TZVP-rev2.1.element.json",
+    "32": "pob/pob-TZVP-rev2.1.element.json",
+    "33": "pob/pob-TZVP-rev2.1.element.json",
+    "34": "pob/pob-TZVP-rev2.1.element.json",
+    "35": "pob/pob-TZVP-rev2.1.element.json"
+  }
+}

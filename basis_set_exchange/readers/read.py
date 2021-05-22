@@ -15,6 +15,7 @@ from .dalton import read_dalton
 from .molcas import read_molcas
 from .genbas import read_genbas
 from .demon2k import read_demon2k
+from .ricdlib import read_ricdlib
 
 _reader_map = {
     'turbomole': {
@@ -61,6 +62,11 @@ _reader_map = {
         'display': 'deMon2k',
         'extension': '.d2k',
         'reader': read_demon2k
+    },
+    'ricdlib': {
+        'display': 'MolCAS RICDlib',
+        'extension': '.RICDLib',
+        'reader': read_ricdlib
     }
 }
 

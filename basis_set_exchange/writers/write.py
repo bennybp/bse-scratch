@@ -21,6 +21,7 @@ from .pqs import write_pqs
 from .cp2k import write_cp2k
 from .bsedebug import write_bsedebug
 from .bdf import write_bdf
+from .ricdwrap import write_ricdwrap
 
 _writer_map = {
     'nwchem': {
@@ -169,6 +170,13 @@ _writer_map = {
         'comment': '*',
         'valid': set(['gto', 'gto_cartesian', 'gto_spherical', 'scalar_ecp']),
         'function': write_bdf
+    },
+    'ricdwrap': {
+        'display': 'Wrapper for generating acCD auxiliary basis sets with OpenMolcas',
+        'extension': '.ricdwrap',
+        'comment': '*',
+        'valid': set(['gto', 'gto_cartesian', 'gto_spherical', 'scalar_ecp']),
+        'function': write_ricdwrap
     }
 }
 

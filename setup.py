@@ -47,6 +47,7 @@ if __name__ == "__main__":
         install_requires=[
             'jsonschema',
             'argcomplete',
+            'unidecode',
         ],
         extras_require={
             ':python_version == "3.6"': ["importlib-metadata < 3"],

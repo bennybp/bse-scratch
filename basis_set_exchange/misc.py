@@ -25,11 +25,12 @@ def max_am(shells):
     return max(all_am)
 
 
-def contraction_string(element):
+def contraction_string(element, compact=False):
     """
     Forms a string specifying the contractions for an element
 
     ie, (16s,10p) -> [4s,3p]
+    or, if compact=True, 16s10p.4s3p
     """
 
     # Does not have electron shells (ECP only?)
@@ -58,11 +59,14 @@ def contraction_string(element):
     for am in sorted(cont_map.keys()):
         nprim, ncont = cont_map[am]
 
-        if am != 0:
+        if am != 0 and not compact:
             primstr += ','
             contstr += ','
         primstr += str(nprim) + lut.amint_to_char([am])
         contstr += str(ncont) + lut.amint_to_char([am])
+
+    if compact:
+        return "{}.{}".format(primstr, contstr)
 
     return "({}) -> [{}]".format(primstr, contstr)
 

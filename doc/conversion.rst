@@ -7,7 +7,7 @@ Converting basis sets
 About conversion
 ----------------
 
-This library (and command-line interface) hsa functionality for converting
+This library (and command-line interface) has functionality for converting
 basis sets from one format to another.
 
 If you have a file that does not convert properly, open an issue

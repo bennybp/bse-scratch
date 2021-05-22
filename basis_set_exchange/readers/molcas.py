@@ -214,4 +214,4 @@ def read_molcas(basis_lines):
     if len(basis_names_found) > 1:
         raise RuntimeError("Multiple basis sets found in file: " + ','.join(basis_names_found))
 
-    return bs_data
+    return bs_data, next(iter(basis_names_found))

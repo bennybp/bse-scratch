@@ -1,0 +1,14 @@
+{
+  "molssi_bse_schema": {
+    "schema_type": "metadata",
+    "schema_version": "0.1"
+  },
+  "names": [
+    "TZP-ZORA"
+  ],
+  "tags": [],
+  "family": "jorge",
+  "description": "TZP-ZORA, all-electron triple-zeta basis for calculations with the ZORA approach",
+  "role": "orbital",
+  "auxiliaries": {}
+}

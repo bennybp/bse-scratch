@@ -1,0 +1,280 @@
+{
+  "molssi_bse_schema": {
+    "schema_type": "element",
+    "schema_version": "0.1"
+  },
+  "name": "TZP-ZORA",
+  "description": "TZP-ZORA, all-electron triple-zeta basis for calculations with the ZORA approach",
+  "elements": {
+    "1": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "2": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "3": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "4": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "5": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "6": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "7": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "8": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "9": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "10": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "11": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "12": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "13": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "14": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "15": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "16": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "17": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "18": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "19": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "20": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "21": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "22": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "23": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "24": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "25": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "26": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "27": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "28": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "29": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "30": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "31": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "32": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "33": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "34": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "35": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "36": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "37": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "38": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "39": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "40": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "41": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "42": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "43": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "44": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "45": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "46": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "47": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "48": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "49": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "50": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "51": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "52": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "53": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    },
+    "54": {
+      "components": [
+        "jorge/TZP-ZORA.1.json"
+      ]
+    }
+  }
+}
